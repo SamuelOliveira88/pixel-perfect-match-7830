@@ -5,7 +5,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
   return (
     <article
       className={`relative flex flex-col overflow-hidden rounded-[18px] bg-card shadow-[0_10px_30px_rgba(0,0,0,.08)] transition-transform hover:-translate-y-1.5 ${
-        emp.destaque ? "border-[3px] border-accent shadow-[0_12px_34px_rgba(139,154,63,.35)]" : ""
+        emp.destaque ? "border-[3px] border-accent shadow-[0_12px_34px_rgba(40,80,180,.35)]" : ""
       }`}
     >
       {emp.destaque && (
