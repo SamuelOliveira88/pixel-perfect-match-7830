@@ -15,7 +15,18 @@ export function FormSimulacao() {
     e.preventDefault();
     let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
     if (planta) texto += `\nPlanta de interesse: ${planta}`;
-    window.open(zap(texto), "_blank", "noopener");
+    const url = zap(texto);
+    // Alguns navegadores/preview bloqueiam window.open; clicar num <a> real evita o bloqueio.
+    const a = document.createElement("a");
+    a.href = url;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(() => {
+      if (!document.hidden) window.location.href = url;
+    }, 700);
   };
 
   return (
