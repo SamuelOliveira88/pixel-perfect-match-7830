@@ -116,7 +116,7 @@ export function Simulador() {
         ))}
 
         <a
-          className="btn-base mt-6 w-full bg-card font-bold text-brand-blue hover:-translate-y-0.5"
+          className="btn-base mt-6 w-full bg-primary font-bold text-primary-foreground hover:-translate-y-0.5"
           target="_blank"
           rel="noopener"
           href={zap("Olá, fiz uma simulação no site e quero falar com um consultor.")}
