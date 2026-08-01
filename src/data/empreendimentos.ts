@@ -4,12 +4,36 @@ import academia from "@/assets/emp-academia.jpg";
 import interior from "@/assets/emp-interior.jpg";
 import lazer from "@/assets/emp-lazer.jpg";
 
+import bonf1 from "@/assets/emp/bonfiglioli-1_1.jpg.asset.json";
+import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
+import bonf3 from "@/assets/emp/bonfiglioli-3_1.jpg.asset.json";
+import bonf4 from "@/assets/emp/bonfiglioli-4_1.jpg.asset.json";
+import bonf5 from "@/assets/emp/bonfiglioli-5_1.jpg.asset.json";
+import camp1 from "@/assets/emp/campolimpo-1_1.jpg.asset.json";
+import camp2 from "@/assets/emp/campolimpo-2_1.jpg.asset.json";
+import camp3 from "@/assets/emp/campolimpo-3.jpg.asset.json";
+import camp4 from "@/assets/emp/campolimpo-4_1.jpg.asset.json";
+import camp5 from "@/assets/emp/campolimpo-5_1.jpg.asset.json";
+import univ1 from "@/assets/emp/cidadeuniv-1_1.jpg.asset.json";
+import univ2 from "@/assets/emp/cidadeuniv-2_1.jpg.asset.json";
+import univ3 from "@/assets/emp/cidadeuniv-3_1.jpg.asset.json";
+import univ4 from "@/assets/emp/cidadeuniv-4_1.jpg.asset.json";
+import univ5 from "@/assets/emp/cidadeuniv-5_1.jpg.asset.json";
+import gio1 from "@/assets/emp/giovanni-1_1.jpg.asset.json";
+import gio2 from "@/assets/emp/giovanni-2_1.jpg.asset.json";
+import gio3 from "@/assets/emp/giovanni-3_1.jpg.asset.json";
+
 export const WHATSAPP = "5511999922344";
 
 export const zap = (texto: string) =>
   `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
 
 export const fotos = [fachada, piscina, academia, interior, lazer];
+
+const fotosBonfiglioli = [bonf1.url, bonf2.url, bonf3.url, bonf4.url, bonf5.url];
+const fotosCampoLimpo = [camp3.url, camp2.url, camp4.url, camp5.url, camp1.url];
+const fotosCidadeUniv = [univ5.url, univ4.url, univ2.url, univ3.url, univ1.url];
+const fotosGiovanni = [gio3.url, gio2.url, gio1.url];
 
 export type Empreendimento = {
   nome: string;
