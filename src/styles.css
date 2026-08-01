@@ -154,3 +154,26 @@
     color: var(--color-foreground);
   }
 }
+
+@keyframes zap-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--whatsapp) 60%, transparent); }
+  70% { box-shadow: 0 0 0 16px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@utility animate-zap-pulse {
+  animation: zap-pulse 2s infinite;
+}
+
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
