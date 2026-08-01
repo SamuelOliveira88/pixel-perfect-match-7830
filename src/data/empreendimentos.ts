@@ -53,7 +53,7 @@ export const empreendimentos: Empreendimento[] = [
       "Espaço gourmet e churrasqueira",
       "Condomínio fechado com segurança",
     ],
-    fotos,
+    fotos: fotosBonfiglioli,
   },
   {
     nome: "Vibra Paes de Barros",
@@ -75,7 +75,7 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia e mais",
       "Condomínio fechado com segurança",
     ],
-    fotos,
+    fotos: fotosCampoLimpo,
   },
   {
     nome: "Vibra Parque Cidade Universitária",
@@ -85,7 +85,7 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia e mais",
       "Condomínio fechado com segurança",
     ],
-    fotos,
+    fotos: fotosCidadeUniv,
   },
   {
     nome: "Vibra Parque Vila Sônia",
@@ -129,6 +129,6 @@ export const empreendimentos: Empreendimento[] = [
       "Subsídio do governo de até R$ 55.000",
       "Financiamento em até 420 vezes, com uso do FGTS",
     ],
-    fotos,
+    fotos: fotosGiovanni,
   },
 ];
