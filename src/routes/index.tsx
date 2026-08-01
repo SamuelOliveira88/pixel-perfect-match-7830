@@ -290,14 +290,6 @@ function Index() {
                   rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="flex size-10 items-center justify-center rounded-full bg-primary-foreground/15"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      "https://www.facebook.com/villarcorretoradeimoveis",
-                      "_blank",
-                      "noopener,noreferrer",
-                    );
-                  }}
                 >
                   f
                 </a>
@@ -307,14 +299,6 @@ function Index() {
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="flex size-10 items-center justify-center rounded-full bg-primary-foreground/15"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      "https://www.instagram.com/simonevillarimob/",
-                      "_blank",
-                      "noopener,noreferrer",
-                    );
-                  }}
                 >
                   ◎
                 </a>
