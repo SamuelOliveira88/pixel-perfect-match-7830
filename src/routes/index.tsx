@@ -5,6 +5,8 @@ import { Simulador } from "@/components/mcmv/Simulador";
 import { zap } from "@/data/empreendimentos";
 import fachada from "@/assets/emp-fachada.jpg";
 import lazer from "@/assets/emp-lazer.jpg";
+import mcmvFamilia from "@/assets/mcmv-familia.jpg";
+import simone from "@/assets/simone.jpg";
 
 const titulo = "MCMV São Paulo | Villar Imóveis";
 const descricao =
@@ -23,13 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const LOGO =
-  "https://mcmvtaboaodaserra.com.br/wp-content/uploads/2026/06/Villar-Imoveis-1-e1781889276847-300x224.png";
-const MCMV_IMG =
-  "https://mcmvtaboaodaserra.com.br/wp-content/uploads/2026/07/minhacasa-minhavida-683e2a8b80b64-1024x1015.webp";
-const FOTO_SIMONE =
-  "https://mcmvtaboaodaserra.com.br/wp-content/uploads/2026/07/Foto-para-perfil-simples-com-borda-azul-1.png";
 
 const passos = [
   ["Simule", "Preencha seus dados e receba uma simulação gratuita e sem compromisso."],
@@ -53,7 +48,12 @@ function Index() {
     <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 bg-card shadow-[0_2px_10px_rgba(0,0,0,.06)]">
         <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-between gap-5 px-5 py-3.5">
-          <img src={LOGO} alt="Villar Imóveis" className="h-14 w-auto" />
+          <span className="text-xl leading-tight font-extrabold tracking-tight text-primary">
+            Villar
+            <span className="block text-xs font-semibold tracking-[0.25em] text-accent-dark">
+              IMÓVEIS
+            </span>
+          </span>
           <div className="min-w-[220px] flex-1 text-center text-lg font-extrabold text-primary">
             Saia do aluguel com o Minha Casa Minha Vida
           </div>
@@ -156,8 +156,10 @@ function Index() {
           </h2>
           <div className="grid items-center gap-12 md:grid-cols-2">
             <img
-              src={MCMV_IMG}
+              src={mcmvFamilia}
               alt="Programa Minha Casa Minha Vida"
+              width={1024}
+              height={1024}
               loading="lazy"
               className="rounded-[20px] shadow-[0_15px_40px_rgba(0,0,0,.15)]"
             />
@@ -180,8 +182,10 @@ function Index() {
           <h2 className="mb-10 text-center text-3xl font-extrabold text-primary">Quem sou eu?</h2>
           <div className="grid items-center gap-10 rounded-3xl bg-gradient-to-br from-card to-secondary p-10 text-center shadow-[0_10px_30px_rgba(0,0,0,.06)] md:grid-cols-[220px_1fr] md:text-left">
             <img
-              src={FOTO_SIMONE}
+              src={simone}
               alt="Simone Villar, corretora de imóveis"
+              width={1024}
+              height={1024}
               loading="lazy"
               className="mx-auto size-50 rounded-full border-6 border-primary object-cover"
             />
