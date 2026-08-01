@@ -280,6 +280,10 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    abrirLink("https://www.facebook.com/villarcorretoradeimoveis");
+                  }}
                   className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
                 >
                   f
@@ -289,6 +293,10 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    abrirLink("https://www.instagram.com/simonevillarimob/");
+                  }}
                   className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
                 >
                   ◎

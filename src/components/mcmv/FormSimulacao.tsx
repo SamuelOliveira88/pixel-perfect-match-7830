@@ -121,7 +121,7 @@ export function FormSimulacao() {
 
         <button
           type="submit"
-          className="w-full rounded-[10px] bg-primary p-4 text-base font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
+          className="w-full rounded-[10px] bg-accent p-4 text-base font-bold text-accent-foreground transition-colors hover:bg-accent-dark"
         >
           Quero saber mais
         </button>
