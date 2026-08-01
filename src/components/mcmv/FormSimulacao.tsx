@@ -2,7 +2,7 @@ import { useState } from "react";
 import { zap } from "@/data/empreendimentos";
 
 const campo =
-  "w-full rounded-[10px] border border-[#2a3550] bg-[#16213e] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
+  "w-full rounded-[10px] border border-[#40507a] bg-[#27385f] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
 
 export function FormSimulacao() {
   const [nome, setNome] = useState("");
@@ -17,7 +17,7 @@ export function FormSimulacao() {
   return (
     <div
       id="simule"
-      className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#1a2848] bg-[#0f1729] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
+      className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#33456f] bg-[#1d2b4a] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
     >
       <form
         onSubmit={(e) => {
