@@ -22,6 +22,14 @@ import univ5 from "@/assets/emp/cidadeuniv-5_1.jpg.asset.json";
 import gio1 from "@/assets/emp/giovanni-1_1.jpg.asset.json";
 import gio2 from "@/assets/emp/giovanni-2_1.jpg.asset.json";
 import gio3 from "@/assets/emp/giovanni-3_1.jpg.asset.json";
+import gio4 from "@/assets/emp/giovanni-4_1.jpg.asset.json";
+import gio5 from "@/assets/emp/giovanni-5_1.jpg.asset.json";
+import jd1 from "@/assets/emp/joaodias-1_1.jpg.asset.json";
+import jd2 from "@/assets/emp/joaodias-2_1.jpg.asset.json";
+import jd3 from "@/assets/emp/joaodias-3_1.jpg.asset.json";
+import jd4 from "@/assets/emp/joaodias-4_1.jpg.asset.json";
+import jd5 from "@/assets/emp/joaodias-5_1.jpg.asset.json";
+import pb1 from "@/assets/emp/paesdebarros-1_1.jpg.asset.json";
 
 export const WHATSAPP = "5511999922344";
 
@@ -33,7 +41,9 @@ export const fotos = [fachada, piscina, academia, interior, lazer];
 const fotosBonfiglioli = [bonf1.url, bonf2.url, bonf3.url, bonf4.url, bonf5.url];
 const fotosCampoLimpo = [camp3.url, camp2.url, camp4.url, camp5.url, camp1.url];
 const fotosCidadeUniv = [univ5.url, univ4.url, univ2.url, univ3.url, univ1.url];
-const fotosGiovanni = [gio3.url, gio2.url, gio1.url];
+const fotosGiovanni = [gio3.url, gio4.url, gio5.url, gio2.url, gio1.url];
+const fotosJoaoDias = [jd3.url, jd4.url, jd5.url, jd2.url, jd1.url];
+const fotosPaesDeBarros = [pb1.url, ...fotos];
 
 export type Empreendimento = {
   nome: string;
@@ -65,7 +75,7 @@ export const empreendimentos: Empreendimento[] = [
       "Salão de festas, jogos e playground",
       "Condomínio fechado com segurança",
     ],
-    fotos,
+    fotos: fotosPaesDeBarros,
   },
   {
     nome: "Vibra Estação Campo Limpo",
@@ -107,7 +117,7 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia, coworking, espaço beleza e pet place",
       "Perto da Av. Giovanni Gronchi e Marginal Pinheiros",
     ],
-    fotos,
+    fotos: fotosJoaoDias,
   },
   {
     nome: "Vibra Estação Vila Sônia",
