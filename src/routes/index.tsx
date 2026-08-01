@@ -67,8 +67,8 @@ function Index() {
               IMÓVEIS
             </span>
           </span>
-          <div className="min-w-[220px] flex-1 text-center text-lg font-extrabold text-primary">
-            O seu apartamento em São Paulo, com entrada a partir de R$ 800
+          <div className="min-w-[220px] flex-1 text-center text-xl font-extrabold leading-snug text-primary md:text-2xl">
+            O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
           </div>
           <a
             href="#simulador"
