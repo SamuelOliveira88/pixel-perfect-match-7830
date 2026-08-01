@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WHATSAPP } from "@/data/empreendimentos";
+import { zap } from "@/data/empreendimentos";
 
 const campo =
   "w-full rounded-[10px] border border-[#2a3550] bg-[#16213e] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
