@@ -17,7 +17,7 @@ export function FormSimulacao() {
   return (
     <div
       id="simule"
-      className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#2a2f2b] bg-[#141815] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
+      className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#1a2848] bg-[#0f1729] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
     >
       <form
         action="https://web.whatsapp.com/send"
