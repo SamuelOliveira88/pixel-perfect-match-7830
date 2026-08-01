@@ -280,7 +280,7 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Facebook"
-                  className="flex size-10 items-center justify-center rounded-full bg-primary-foreground/15"
+                  className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
                 >
                   f
                 </a>
@@ -289,7 +289,7 @@ function Index() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
-                  className="flex size-10 items-center justify-center rounded-full bg-primary-foreground/15"
+                  className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
                 >
                   ◎
                 </a>
