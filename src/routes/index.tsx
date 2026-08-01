@@ -4,6 +4,7 @@ import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { Simulador } from "@/components/mcmv/Simulador";
 import { zap } from "@/data/empreendimentos";
 import fachada from "@/assets/emp-fachada.jpg";
+import videoPaesDeBarros from "@/assets/paes-de-barros.mp4.asset.json";
 import lazer from "@/assets/emp-lazer.jpg";
 import mcmvFamilia from "@/assets/mcmv-familia.jpg";
 import simone from "@/assets/simone.jpg";
@@ -83,12 +84,16 @@ function Index() {
               </span>
               Conheça o Vibra Paes de Barros
             </div>
-            <img
-              src={fachada}
-              alt="Vibra Paes de Barros"
-              width={1024}
-              height={768}
-              className="max-h-[520px] w-full rounded-xl object-cover"
+            <video
+              src={videoPaesDeBarros.url}
+              poster={fachada}
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="max-h-[520px] w-full rounded-xl bg-black object-cover"
             />
             <div className="mt-3 text-center text-sm text-muted-foreground">
               Veja o empreendimento e agende sua visita
