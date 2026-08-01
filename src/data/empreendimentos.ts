@@ -48,34 +48,7 @@ import ev5 from "@/assets/emp/vilasoniaestacao-5_1.jpg.asset.json";
 export const WHATSAPP = "5511999922344";
 
 export const zap = (texto: string) =>
-  `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(texto)}`;
-
-/**
- * Abre o WhatsApp de forma resiliente: dentro de iframes de preview ou com
- * bloqueadores de pop-up o `target="_blank"` pode ser ignorado. Tentamos, em
- * ordem: window.open -> navegação da janela do topo -> navegação da própria aba.
- */
-export function abrirZap(texto: string, e?: { preventDefault: () => void }) {
-  e?.preventDefault();
-  const url = zap(texto);
-  if (typeof window === "undefined") return;
-  let aberto = false;
-  try {
-    aberto = !!window.open(url, "_blank", "noopener,noreferrer");
-  } catch {
-    aberto = false;
-  }
-  if (aberto) return;
-  try {
-    if (window.top && window.top !== window.self) {
-      window.top.location.href = url;
-      return;
-    }
-  } catch {
-    // cross-origin: cai no fallback abaixo
-  }
-  window.location.href = url;
-}
+  `https://web.whatsapp.com/send?phone=${WHATSAPP}&text=${encodeURIComponent(texto)}`;
 
 export const fotos = [fachada, piscina, academia, interior, lazer];
 

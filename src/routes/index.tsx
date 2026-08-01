@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Empreendimentos } from "@/components/mcmv/Empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { Simulador } from "@/components/mcmv/Simulador";
-import { abrirZap, zap } from "@/data/empreendimentos";
+import { zap } from "@/data/empreendimentos";
 import fachada from "@/assets/emp-fachada.jpg";
 import videoPaesDeBarros from "@/assets/paes-de-barros.mp4.asset.json";
 import lazer from "@/assets/emp-lazer.jpg";
@@ -69,7 +69,6 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => abrirZap(msgZap, e)}
             className="btn-base bg-whatsapp text-primary-foreground hover:bg-whatsapp-dark"
           >
             SIMULAÇÃO GRATUITA
@@ -231,7 +230,6 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => abrirZap(msgZap, e)}
             className="btn-base bg-whatsapp text-primary-foreground hover:bg-whatsapp-dark"
           >
             CONHEÇA AGORA
@@ -289,7 +287,6 @@ function Index() {
         href={linkZap}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={(e) => abrirZap(msgZap, e)}
         aria-label="Falar no WhatsApp"
         className="animate-zap-pulse fixed right-6 bottom-6 z-100 flex size-15 items-center justify-center rounded-full bg-whatsapp text-3xl text-primary-foreground"
       >

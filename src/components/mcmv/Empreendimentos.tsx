@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { abrirZap, empreendimentos, zap, type Empreendimento } from "@/data/empreendimentos";
+import { empreendimentos, zap, type Empreendimento } from "@/data/empreendimentos";
 
 function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => void }) {
   return (
@@ -57,9 +57,6 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
           target="_blank"
           rel="noopener noreferrer"
           href={zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`)}
-          onClick={(e) =>
-            abrirZap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`, e)
-          }
         >
           SIMULAÇÃO GRÁTIS
         </a>
