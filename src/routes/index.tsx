@@ -271,18 +271,10 @@ function Index() {
               <p className="text-sm opacity-85">
                 💬{" "}
                 <a
-                  href="https://wa.me/5511999922344"
+                  href={zap("Olá, vim pelo site MCMV e gostaria de mais informações.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:underline"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    window.open(
-                      "https://wa.me/5511999922344",
-                      "_blank",
-                      "noopener,noreferrer",
-                    );
-                  }}
                 >
                   (11) 9.9992-2344
                 </a>
