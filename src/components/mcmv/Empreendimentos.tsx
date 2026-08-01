@@ -71,7 +71,7 @@ export function Empreendimentos() {
   const mover = useCallback((passo: number) => {
     setBook((b) => {
       if (!b) return b;
-      const total = empreendimentos[b.emp].fotos.length;
+      const total = empreendimentos[b.emp]?.fotos.length ?? 1;
       return { ...b, foto: (b.foto + passo + total) % total };
     });
   }, []);
