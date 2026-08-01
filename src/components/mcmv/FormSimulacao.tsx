@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { abrirZap } from "@/data/empreendimentos";
+import { WHATSAPP } from "@/data/empreendimentos";
 
 const campo =
   "w-full rounded-[10px] border border-[#3a4038] bg-[#1a1e1b] px-4 py-3.5 text-base text-[#f2f2f0] outline-none placeholder:text-[#777c76] focus:border-accent focus:ring-3 focus:ring-accent/25";
@@ -11,19 +11,21 @@ export function FormSimulacao() {
   const [fgts, setFgts] = useState("");
   const [planta, setPlanta] = useState("");
 
-  const enviar = (e: React.FormEvent) => {
-    e.preventDefault();
-    let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
-    if (planta) texto += `\nPlanta de interesse: ${planta}`;
-    abrirZap(texto);
-  };
+  let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
+  if (planta) texto += `\nPlanta de interesse: ${planta}`;
 
   return (
     <div
       id="simule"
       className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#2a2f2b] bg-[#141815] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
     >
-      <form onSubmit={enviar} className="space-y-5">
+      <form
+        action={`https://wa.me/${WHATSAPP}`}
+        method="get"
+        target="_blank"
+        className="space-y-5"
+      >
+        <input type="hidden" name="text" value={texto} />
         <div>
           <label htmlFor="nome" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
             Nome completo <span className="text-[#d99a3d]">*</span>
