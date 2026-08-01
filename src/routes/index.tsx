@@ -68,7 +68,7 @@ function Index() {
             </span>
           </span>
           <div className="min-w-[220px] flex-1 text-center text-lg font-extrabold text-primary">
-            Saia do aluguel com o Minha Casa Minha Vida
+            O seu apartamento em São Paulo, com entrada a partir de R$ 800
           </div>
           <a
             href="#simulador"
