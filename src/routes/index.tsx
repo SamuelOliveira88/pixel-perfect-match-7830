@@ -129,7 +129,7 @@ function Index() {
                 (b) => (
                   <span
                     key={b}
-                    className="rounded-full border border-primary-foreground/50 bg-accent px-4 py-2 text-sm font-bold"
+                    className="rounded-full border border-primary-foreground/35 bg-accent/35 px-4 py-2 text-sm font-semibold backdrop-blur-sm"
                   >
                     {b}
                   </span>
