@@ -250,7 +250,23 @@ function Index() {
             </div>
             <div>
               <h3 className="mb-3.5 font-bold">Contato</h3>
-              <p className="text-sm opacity-85">📞 (11) 9.9992-2344</p>
+              <p className="text-sm opacity-85">
+                📞{" "}
+                <a href="tel:+5511999922344" className="hover:underline">
+                  (11) 9.9992-2344
+                </a>
+              </p>
+              <p className="text-sm opacity-85">
+                💬{" "}
+                <a
+                  href="https://wa.me/5511999922344"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  (11) 9.9992-2344
+                </a>
+              </p>
               <p className="text-sm opacity-85">CRECI 189.434-F 42581-J</p>
             </div>
             <div>
@@ -259,7 +275,7 @@ function Index() {
                 <a
                   href="https://www.facebook.com/villarcorretoradeimoveis"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   aria-label="Facebook"
                   className="flex size-10 items-center justify-center rounded-full bg-primary-foreground/15"
                 >
@@ -268,7 +284,7 @@ function Index() {
                 <a
                   href="https://www.instagram.com/simonevillarimob/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="flex size-10 items-center justify-center rounded-full bg-primary-foreground/15"
                 >
