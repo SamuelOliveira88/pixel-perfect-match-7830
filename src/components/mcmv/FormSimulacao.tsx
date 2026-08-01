@@ -22,7 +22,7 @@ export function FormSimulacao() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          window.open(zap(texto), "_blank", "noopener,noreferrer");
+          window.location.href = zap(texto);
         }}
         className="space-y-5"
       >

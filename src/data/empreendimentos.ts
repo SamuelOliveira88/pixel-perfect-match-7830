@@ -48,7 +48,7 @@ import ev5 from "@/assets/emp/vilasoniaestacao-5_1.jpg.asset.json";
 export const WHATSAPP = "5511999922344";
 
 export const zap = (texto: string) =>
-  `https://web.whatsapp.com/send?phone=${WHATSAPP}&text=${encodeURIComponent(texto)}`;
+  `whatsapp://send?phone=${WHATSAPP}&text=${encodeURIComponent(texto)}`;
 
 export const fotos = [fachada, piscina, academia, interior, lazer];
 
