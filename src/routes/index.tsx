@@ -61,7 +61,7 @@ function Index() {
           </div>
           <a
             href="#simulador"
-            className="btn-base bg-brand-blue text-primary-foreground hover:bg-brand-blue-dark"
+            className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark"
           >
             SIMULAR AGORA
           </a>
@@ -69,7 +69,7 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-base bg-whatsapp text-primary-foreground hover:bg-whatsapp-dark"
+            className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark"
           >
             SIMULAÇÃO GRATUITA
           </a>
@@ -230,7 +230,7 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-base bg-whatsapp text-primary-foreground hover:bg-whatsapp-dark"
+            className="btn-base bg-primary-dark text-primary-foreground shadow-lg hover:bg-primary"
           >
             CONHEÇA AGORA
           </a>
@@ -307,7 +307,7 @@ function Index() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar no WhatsApp"
-        className="animate-zap-pulse fixed right-6 bottom-6 z-100 flex size-15 items-center justify-center rounded-full bg-whatsapp text-3xl text-primary-foreground"
+        className="animate-zap-pulse fixed right-6 bottom-6 z-100 flex size-15 items-center justify-center rounded-full bg-primary text-3xl text-primary-foreground"
       >
         ☎
       </a>
