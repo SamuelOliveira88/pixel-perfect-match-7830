@@ -255,15 +255,6 @@ function Index() {
                 <a
                   href="tel:+5511999922344"
                   className="hover:underline"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    try {
-                      (window.top ?? window).location.href =
-                        "tel:+5511999922344";
-                    } catch {
-                      window.location.href = "tel:+5511999922344";
-                    }
-                  }}
                 >
                   (11) 9.9992-2344
                 </a>
