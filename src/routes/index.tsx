@@ -230,7 +230,7 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark"
+            className="btn-base bg-primary-dark text-primary-foreground shadow-lg hover:bg-primary"
           >
             CONHEÇA AGORA
           </a>
