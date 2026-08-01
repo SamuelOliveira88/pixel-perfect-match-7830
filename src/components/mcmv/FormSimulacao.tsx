@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { WHATSAPP } from "@/data/empreendimentos";
+import { zap } from "@/data/empreendimentos";
 
 const campo =
   "w-full rounded-[10px] border border-[#2a3550] bg-[#16213e] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
@@ -20,14 +20,12 @@ export function FormSimulacao() {
       className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#1a2848] bg-[#0f1729] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
     >
       <form
-        action="https://web.whatsapp.com/send"
-        method="get"
-        target="_blank"
-        rel="noopener noreferrer"
+        onSubmit={(e) => {
+          e.preventDefault();
+          window.open(zap(texto), "_blank", "noopener,noreferrer");
+        }}
         className="space-y-5"
       >
-        <input type="hidden" name="phone" value={WHATSAPP} />
-        <input type="hidden" name="text" value={texto} />
         <div>
           <label htmlFor="nome" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
             Nome completo <span className="text-[#d99a3d]">*</span>
