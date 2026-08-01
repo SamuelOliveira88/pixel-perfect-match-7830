@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { zap } from "@/data/empreendimentos";
+import { abrirZap } from "@/data/empreendimentos";
 
 const campo =
   "w-full rounded-[10px] border border-[#3a4038] bg-[#1a1e1b] px-4 py-3.5 text-base text-[#f2f2f0] outline-none placeholder:text-[#777c76] focus:border-accent focus:ring-3 focus:ring-accent/25";
@@ -15,18 +15,7 @@ export function FormSimulacao() {
     e.preventDefault();
     let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
     if (planta) texto += `\nPlanta de interesse: ${planta}`;
-    const url = zap(texto);
-    // Alguns navegadores/preview bloqueiam window.open; clicar num <a> real evita o bloqueio.
-    const a = document.createElement("a");
-    a.href = url;
-    a.target = "_blank";
-    a.rel = "noopener noreferrer";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => {
-      if (!document.hidden) window.location.href = url;
-    }, 700);
+    abrirZap(texto);
   };
 
   return (
