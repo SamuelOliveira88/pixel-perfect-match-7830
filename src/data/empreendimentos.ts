@@ -1,9 +1,3 @@
-import fachada from "@/assets/emp-fachada.jpg";
-import piscina from "@/assets/emp-piscina.jpg";
-import academia from "@/assets/emp-academia.jpg";
-import interior from "@/assets/emp-interior.jpg";
-import lazer from "@/assets/emp-lazer.jpg";
-
 import bonf1 from "@/assets/emp/bonfiglioli-1_1.jpg.asset.json";
 import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
 import bonf3 from "@/assets/emp/bonfiglioli-3_1.jpg.asset.json";
@@ -47,10 +41,7 @@ import ev5 from "@/assets/emp/vilasoniaestacao-5_1.jpg.asset.json";
 
 export const WHATSAPP = "5511999922344";
 
-export const zap = (texto: string) =>
-  `whatsapp://send?phone=${WHATSAPP}&text=${encodeURIComponent(texto)}`;
-
-export const fotos = [fachada, piscina, academia, interior, lazer];
+export const zap = (texto: string) => `whatsapp://send?phone=${WHATSAPP}&text=${encodeURIComponent(texto)}`;
 
 const fotosBonfiglioli = [bonf1.url, bonf2.url, bonf3.url, bonf4.url, bonf5.url];
 const fotosCampoLimpo = [camp3.url, camp2.url, camp4.url, camp5.url, camp1.url];
