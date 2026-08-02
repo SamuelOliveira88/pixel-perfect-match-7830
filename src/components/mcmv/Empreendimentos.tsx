@@ -36,7 +36,8 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
       </div>
       <div className="flex flex-1 flex-col px-5 pt-5 pb-6">
         <h3 className="text-xl font-bold text-primary">{emp.nome}</h3>
-        <div className="mb-3 font-extrabold text-accent-dark">Minha Casa Minha Vida · HIS</div>
+        <div className="mb-1 font-extrabold text-accent-dark">Minha Casa Minha Vida · HIS</div>
+        <div className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground/70">{emp.zona}</div>
         <ul className="mb-5 flex-1 space-y-1">
           {emp.itens.map((i) => (
             <li key={i} className="relative pl-6 text-sm text-muted-foreground">
