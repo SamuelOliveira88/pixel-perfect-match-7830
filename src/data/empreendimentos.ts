@@ -55,6 +55,7 @@ const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 export type Empreendimento = {
   nome: string;
   destaque?: boolean;
+  zona: "Zona Sul" | "Zona Oeste" | "Zona Leste";
   itens: string[];
   fotos: string[];
 };
@@ -63,6 +64,7 @@ export const empreendimentos: Empreendimento[] = [
   {
     nome: "Vibra Jardim Bonfiglioli",
     destaque: true,
+    zona: "Zona Oeste",
     itens: [
       "Lançamento Vibra Residencial",
       "1 e 2 quartos, com varanda",
@@ -75,6 +77,7 @@ export const empreendimentos: Empreendimento[] = [
   {
     nome: "Vibra Paes de Barros",
     destaque: true,
+    zona: "Zona Leste",
     itens: [
       "Lançamento Vibra Residencial",
       "1 e 2 quartos, com varanda",
@@ -86,6 +89,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra Estação Campo Limpo",
+    zona: "Zona Sul",
     itens: [
       "Lançamento Vibra Residencial",
       "1 e 2 quartos, com varanda",
@@ -96,6 +100,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra Parque Cidade Universitária",
+    zona: "Zona Oeste",
     itens: [
       "Lançamento Vibra Residencial",
       "1 e 2 quartos, com varanda",
@@ -106,6 +111,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra Parque Vila Sônia",
+    zona: "Zona Oeste",
     itens: [
       "5 minutos de ônibus do Metrô Vila Sônia",
       "Perto do Parque Chácara do Jockey",
@@ -117,6 +123,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra João Dias",
+    zona: "Zona Sul",
     itens: [
       "7 min do Terminal João Dias, 3 min do Metrô Giovanni Gronchi",
       "Torre única, 358 unidades, condomínio fechado",
@@ -128,6 +135,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra Estação Vila Sônia",
+    zona: "Zona Oeste",
     itens: [
       "8 minutos a pé do Metrô Vila Sônia",
       "44º lançamento da Vibra na cidade",
@@ -139,6 +147,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra Estação Giovanni",
+    zona: "Zona Sul",
     itens: [
       "Perto das estações Giovanni Gronchi e Borba Gato (Linha 5-Lilás)",
       "Região do Brooklin / Campo Belo, zona sul de São Paulo",

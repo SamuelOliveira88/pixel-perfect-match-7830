@@ -36,7 +36,8 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
       </div>
       <div className="flex flex-1 flex-col px-5 pt-5 pb-6">
         <h3 className="text-xl font-bold text-primary">{emp.nome}</h3>
-        <div className="mb-3 font-extrabold text-accent-dark">Minha Casa Minha Vida · HIS</div>
+        <div className="mb-1 font-extrabold text-accent-dark">Minha Casa Minha Vida · HIS</div>
+        <div className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground/70">{emp.zona}</div>
         <ul className="mb-5 flex-1 space-y-1">
           {emp.itens.map((i) => (
             <li key={i} className="relative pl-6 text-sm text-muted-foreground">
@@ -93,6 +94,10 @@ export function Empreendimentos() {
 
   const destaques = empreendimentos.filter((e) => e.destaque);
   const demais = empreendimentos.filter((e) => !e.destaque);
+  const ordemZonas = ["Zona Sul", "Zona Oeste", "Zona Leste"] as const;
+  const zonasComCards = ordemZonas
+    .map((zona) => ({ zona, lista: demais.filter((e) => e.zona === zona) }))
+    .filter((z) => z.lista.length > 0);
   const atual = book ? empreendimentos[book.emp] : null;
 
   return (
@@ -115,15 +120,20 @@ export function Empreendimentos() {
           ))}
         </div>
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {demais.map((emp) => (
-            <Card
-              key={emp.nome}
-              emp={emp}
-              abrir={(foto) => setBook({ emp: empreendimentos.indexOf(emp), foto })}
-            />
-          ))}
-        </div>
+        {zonasComCards.map(({ zona, lista }) => (
+          <div key={zona} className="mb-9">
+            <h3 className="mb-5 text-center text-2xl font-extrabold text-primary">{zona}</h3>
+            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+              {lista.map((emp) => (
+                <Card
+                  key={emp.nome}
+                  emp={emp}
+                  abrir={(foto) => setBook({ emp: empreendimentos.indexOf(emp), foto })}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {book && atual && (
