@@ -94,6 +94,10 @@ export function Empreendimentos() {
 
   const destaques = empreendimentos.filter((e) => e.destaque);
   const demais = empreendimentos.filter((e) => !e.destaque);
+  const ordemZonas = ["Zona Sul", "Zona Oeste", "Zona Leste"] as const;
+  const zonasComCards = ordemZonas
+    .map((zona) => ({ zona, lista: demais.filter((e) => e.zona === zona) }))
+    .filter((z) => z.lista.length > 0);
   const atual = book ? empreendimentos[book.emp] : null;
 
   return (
@@ -116,15 +120,20 @@ export function Empreendimentos() {
           ))}
         </div>
 
-        <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-          {demais.map((emp) => (
-            <Card
-              key={emp.nome}
-              emp={emp}
-              abrir={(foto) => setBook({ emp: empreendimentos.indexOf(emp), foto })}
-            />
-          ))}
-        </div>
+        {zonasComCards.map(({ zona, lista }) => (
+          <div key={zona} className="mb-9">
+            <h3 className="mb-5 text-center text-2xl font-extrabold text-primary">{zona}</h3>
+            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+              {lista.map((emp) => (
+                <Card
+                  key={emp.nome}
+                  emp={emp}
+                  abrir={(foto) => setBook({ emp: empreendimentos.indexOf(emp), foto })}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
 
       {book && atual && (
