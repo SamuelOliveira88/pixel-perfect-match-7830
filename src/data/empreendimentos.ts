@@ -55,6 +55,7 @@ const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 export type Empreendimento = {
   nome: string;
   destaque?: boolean;
+  zona: "Zona Sul" | "Zona Oeste" | "Zona Leste";
   itens: string[];
   fotos: string[];
 };
