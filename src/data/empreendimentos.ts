@@ -23,11 +23,6 @@ import jd2 from "@/assets/emp/joaodias-2_1.jpg.asset.json";
 import jd3 from "@/assets/emp/joaodias-3_1.jpg.asset.json";
 import jd4 from "@/assets/emp/joaodias-4_1.jpg.asset.json";
 import jd5 from "@/assets/emp/joaodias-5_1.jpg.asset.json";
-import pb1 from "@/assets/emp/paesdebarros-1_1.jpg.asset.json";
-import pb2 from "@/assets/emp/paesdebarros-2_1.jpg.asset.json";
-import pb3 from "@/assets/emp/paesdebarros-3_1.jpg.asset.json";
-import pb4 from "@/assets/emp/paesdebarros-4_1.jpg.asset.json";
-import pb5 from "@/assets/emp/paesdebarros-5_1.jpg.asset.json";
 import vs1 from "@/assets/emp/vilasonia-1_1.jpg.asset.json";
 import vs2 from "@/assets/emp/vilasonia-2_1.jpg.asset.json";
 import vs3 from "@/assets/emp/vilasonia-3_1.jpg.asset.json";
@@ -63,7 +58,6 @@ const fotosCampoLimpo = [camp3.url, camp2.url, camp4.url, camp5.url, camp1.url];
 const fotosCidadeUniv = [univ5.url, univ4.url, univ2.url, univ3.url, univ1.url];
 const fotosGiovanni = [gio3.url, gio4.url, gio5.url, gio2.url, gio1.url];
 const fotosJoaoDias = [jd3.url, jd4.url, jd5.url, jd2.url, jd1.url];
-const fotosPaesDeBarros = [pb1.url, pb2.url, pb3.url, pb4.url, pb5.url];
 const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
 const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
@@ -88,19 +82,6 @@ export const empreendimentos: Empreendimento[] = [
       "Condomínio fechado com segurança",
     ],
     fotos: fotosBonfiglioli,
-  },
-  {
-    nome: "Vibra Paes de Barros",
-    destaque: true,
-    zona: "Zona Leste",
-    itens: [
-      "Lançamento Vibra Residencial",
-      "1 e 2 quartos, com varanda",
-      "Piscina, academia, coworking e mais",
-      "Salão de festas, jogos e playground",
-      "Condomínio fechado com segurança",
-    ],
-    fotos: fotosPaesDeBarros,
   },
   {
     nome: "Vibra Estação Campo Limpo",
