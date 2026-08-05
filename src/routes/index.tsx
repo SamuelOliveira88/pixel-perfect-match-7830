@@ -4,7 +4,7 @@ import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { Simulador } from "@/components/mcmv/Simulador";
 import { zap } from "@/data/empreendimentos";
 import fachada from "@/assets/emp-fachada.jpg";
-import videoPaesDeBarros from "@/assets/paes-de-barros.mp4.asset.json";
+import videoBonfiglioli from "@/assets/jd-bonfiglioli.mp4.asset.json";
 import lazer from "@/assets/emp-lazer.jpg";
 import mcmvFamilia from "@/assets/mcmv-familia.jpg";
 import simone from "@/assets/simone.jpg";
@@ -89,10 +89,10 @@ function Index() {
               <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
                 🔥 Lançamento
               </span>
-              Conheça o Vibra Paes de Barros
+              Conheça o Vibra Jardim Bonfiglioli
             </div>
             <video
-              src={videoPaesDeBarros.url}
+              src={videoBonfiglioli.url}
               poster={fachada}
               controls
               autoPlay
