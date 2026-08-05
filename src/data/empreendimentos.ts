@@ -48,7 +48,7 @@ const bookBonfiglioli = Object.keys(bookBonfiglioliMods)
   .map((k) => bookBonfiglioliMods[k]!.default.url);
 
 const fotosBonfiglioli = [
-  fachadaBonfiglioli,
+  fachadaBonfiglioli.url,
   ...bookBonfiglioli,
   bonf1.url,
   bonf2.url,
