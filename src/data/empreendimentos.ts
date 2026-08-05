@@ -1,3 +1,4 @@
+import fachadaBonfiglioli from "@/assets/emp-fachada.jpg";
 import bonf1 from "@/assets/emp/bonfiglioli-1_1.jpg.asset.json";
 import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
 import bonf3 from "@/assets/emp/bonfiglioli-3_1.jpg.asset.json";
@@ -47,6 +48,7 @@ const bookBonfiglioli = Object.keys(bookBonfiglioliMods)
   .map((k) => bookBonfiglioliMods[k]!.default.url);
 
 const fotosBonfiglioli = [
+  fachadaBonfiglioli,
   ...bookBonfiglioli,
   bonf1.url,
   bonf2.url,
