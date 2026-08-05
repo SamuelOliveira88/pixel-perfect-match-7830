@@ -22,6 +22,10 @@ export function FormSimulacao() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
+          const googleTag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+          googleTag?.("event", "conversion", {
+            send_to: "AW-18250677459/ZGpkCNCN-NEcENP5zP5D",
+          });
           window.location.href = zap(texto);
         }}
         className="space-y-5"
