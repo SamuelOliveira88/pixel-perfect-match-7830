@@ -103,28 +103,29 @@ export function Empreendimentos() {
   return (
     <section id="imoveis" className="py-16">
       <div className="mx-auto max-w-[1100px] px-5">
-        <h2 className="mb-2.5 text-center text-3xl font-extrabold text-primary">
-          Conheça os empreendimentos disponíveis
-        </h2>
-        <p className="mx-auto mb-10 max-w-xl text-center text-muted-foreground">
-          Selecionamos os melhores lançamentos MCMV da região para você
-        </p>
-
-        <div className="mb-7 grid gap-7 md:grid-cols-2">
-          {destaques.map((emp) => (
-            <Card
-              key={emp.nome}
-              emp={emp}
-              abrir={(foto) => setBook({ emp: empreendimentos.indexOf(emp), foto })}
-            />
-          ))}
+        <div className="mx-auto mb-10 max-w-2xl text-center">
+          <span className="mb-3 inline-flex rounded-full bg-accent/15 px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent-dark">
+            Encontre seu novo lar
+          </span>
+          <h2 className="mb-2.5 text-3xl font-extrabold text-primary">
+            Conheça os empreendimentos disponíveis
+          </h2>
+          <p className="text-muted-foreground">
+            Selecionamos os melhores lançamentos MCMV da região para você
+          </p>
         </div>
 
-        {zonasComCards.map(({ zona, lista }) => (
-          <div key={zona} className="mb-9">
-            <h3 className="mb-5 text-center text-2xl font-extrabold text-primary">{zona}</h3>
-            <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-              {lista.map((emp) => (
+        {destaques.length > 0 && (
+          <div className="mb-12">
+            <div className="mb-5 flex items-center gap-3">
+              <span className="h-px flex-1 bg-border" />
+              <h3 className="text-center text-lg font-extrabold uppercase tracking-[0.1em] text-primary">
+                Em destaque
+              </h3>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            <div className={`grid gap-7 ${destaques.length > 1 ? "md:grid-cols-2" : "mx-auto max-w-2xl"}`}>
+              {destaques.map((emp) => (
                 <Card
                   key={emp.nome}
                   emp={emp}
@@ -133,7 +134,33 @@ export function Empreendimentos() {
               ))}
             </div>
           </div>
-        ))}
+        )}
+
+        {zonasComCards.length > 0 && (
+          <div>
+            <div className="mb-7 flex items-center gap-3">
+              <span className="h-px flex-1 bg-border" />
+              <h3 className="text-center text-lg font-extrabold uppercase tracking-[0.1em] text-primary">
+                Mais opções por região
+              </h3>
+              <span className="h-px flex-1 bg-border" />
+            </div>
+            {zonasComCards.map(({ zona, lista }) => (
+              <div key={zona} className="mb-9 last:mb-0">
+                <h4 className="mb-5 border-l-4 border-accent pl-3 text-xl font-extrabold text-primary">{zona}</h4>
+                <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+                  {lista.map((emp) => (
+                    <Card
+                      key={emp.nome}
+                      emp={emp}
+                      abrir={(foto) => setBook({ emp: empreendimentos.indexOf(emp), foto })}
+                    />
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       {book && atual && (
