@@ -7,11 +7,12 @@ const campo =
 export function FormSimulacao() {
   const [nome, setNome] = useState("");
   const [telefone, setTelefone] = useState("");
+  const [email, setEmail] = useState("");
   const [renda, setRenda] = useState("");
   const [fgts, setFgts] = useState("");
   const [planta, setPlanta] = useState("");
 
-  let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
+  let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nE-mail: ${email}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
   if (planta) texto += `\nPlanta de interesse: ${planta}`;
 
   return (
@@ -26,6 +27,20 @@ export function FormSimulacao() {
           googleTag?.("event", "conversion", {
             send_to: "AW-18250677459/ZGpkCNCN-NEcENP5zP5D",
           });
+          void fetch(
+            "https://app.imobilead.me/integrate-api/integracoes/webhook/b4e6bc52719b82d65abba587573399ad/",
+            {
+              method: "POST",
+              mode: "no-cors",
+              keepalive: true,
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                nome: nome.trim(),
+                telefone: telefone.trim(),
+                email: email.trim(),
+              }),
+            },
+          ).catch(() => undefined);
           window.location.href = zap(texto);
         }}
         className="space-y-5"
