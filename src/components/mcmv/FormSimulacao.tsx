@@ -75,6 +75,12 @@ export function FormSimulacao() {
 
         <div>
           <label htmlFor="renda" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
+            &nbsp;
+          </label>
+        </div>
+
+        <div>
+          <label htmlFor="renda" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
             Renda familiar <span className="text-[#d99a3d]">*</span>
           </label>
           <select
