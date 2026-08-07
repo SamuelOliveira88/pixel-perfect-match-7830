@@ -63,6 +63,14 @@ const fotosJoaoDias = [jd3.url, jd4.url, jd5.url, jd2.url, jd1.url];
 const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
 const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
+const bookPaesMods = import.meta.glob<{ default: { url: string } }>(
+  "../assets/bookpb/*.asset.json",
+  { eager: true },
+);
+const fotosPaesDeBarros = Object.keys(bookPaesMods)
+  .sort()
+  .map((k) => bookPaesMods[k]!.default.url);
+
 export type Empreendimento = {
   nome: string;
   destaque?: boolean;
