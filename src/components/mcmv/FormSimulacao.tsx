@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { zap } from "@/data/empreendimentos";
 
 const campo =
   "w-full rounded-[10px] border border-[#40507a] bg-[#27385f] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
+
+const webhookUrl =
+  "https://app.imobilead.me/integrate-api/integracoes/webhook/b4e6bc52719b82d65abba587573399ad/";
 
 export function FormSimulacao() {
   const [nome, setNome] = useState("");
@@ -11,40 +13,66 @@ export function FormSimulacao() {
   const [renda, setRenda] = useState("");
   const [fgts, setFgts] = useState("");
   const [planta, setPlanta] = useState("");
+  const [enviando, setEnviando] = useState(false);
+  const [enviado, setEnviado] = useState(false);
+  const [erro, setErro] = useState("");
 
-  let texto = `Olá, meu nome é ${nome}. Vi o site MCMV e quero saber mais.\nTelefone: ${telefone}\nE-mail: ${email}\nFaixa de renda: ${renda}\nPossui FGTS: ${fgts}`;
-  if (planta) texto += `\nPlanta de interesse: ${planta}`;
+  async function enviarFormulario(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setEnviando(true);
+    setErro("");
+
+    try {
+      const resposta = await fetch(webhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          nome: nome.trim(),
+          telefone: telefone.trim(),
+          email: email.trim(),
+        }),
+      });
+
+      if (!resposta.ok) {
+        throw new Error("Não foi possível confirmar o envio.");
+      }
+
+      const googleTag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+      googleTag?.("event", "conversion", {
+        send_to: "AW-18250677459/ZGpkCNCN-NEcENP5zP5D",
+      });
+      setEnviado(true);
+    } catch {
+      setErro("Não foi possível enviar seus dados agora. Tente novamente em instantes.");
+    } finally {
+      setEnviando(false);
+    }
+  }
+
+  if (enviado) {
+    return (
+      <div
+        id="simule"
+        role="status"
+        className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#33456f] bg-[#1d2b4a] p-7 text-center shadow-[0_15px_40px_rgba(0,0,0,.25)]"
+      >
+        <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-accent text-2xl font-bold text-accent-foreground">
+          ✓
+        </div>
+        <h2 className="mb-2 text-xl font-bold text-[#f2f2f0]">Recebemos seus dados!</h2>
+        <p className="text-sm leading-relaxed text-[#d5dbee]">
+          Obrigado pelo contato. Nossa equipe analisará seu perfil e falará com você em breve.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div
       id="simule"
       className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#33456f] bg-[#1d2b4a] p-7 shadow-[0_15px_40px_rgba(0,0,0,.25)]"
     >
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const googleTag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
-          googleTag?.("event", "conversion", {
-            send_to: "AW-18250677459/ZGpkCNCN-NEcENP5zP5D",
-          });
-          void fetch(
-            "https://app.imobilead.me/integrate-api/integracoes/webhook/b4e6bc52719b82d65abba587573399ad/",
-            {
-              method: "POST",
-              mode: "no-cors",
-              keepalive: true,
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({
-                nome: nome.trim(),
-                telefone: telefone.trim(),
-                email: email.trim(),
-              }),
-            },
-          ).catch(() => undefined);
-          window.location.href = zap(texto);
-        }}
-        className="space-y-5"
-      >
+      <form onSubmit={enviarFormulario} className="space-y-5">
         <div>
           <label htmlFor="nome" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
             Nome completo <span className="text-[#d99a3d]">*</span>
@@ -153,11 +181,18 @@ export function FormSimulacao() {
           </select>
         </div>
 
+        {erro && (
+          <p role="alert" className="text-sm font-medium text-[#ffc8b8]">
+            {erro}
+          </p>
+        )}
+
         <button
           type="submit"
-          className="w-full rounded-[10px] bg-accent p-4 text-base font-bold text-accent-foreground transition-colors hover:bg-accent-dark"
+          disabled={enviando}
+          className="w-full rounded-[10px] bg-accent p-4 text-base font-bold text-accent-foreground transition-colors hover:bg-accent-dark disabled:cursor-wait disabled:opacity-70"
         >
-          Quero saber mais
+          {enviando ? "Enviando..." : "Quero saber mais"}
         </button>
       </form>
     </div>
