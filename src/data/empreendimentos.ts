@@ -15,7 +15,8 @@ const bookBonfiglioliMods = import.meta.glob<{ default: { url: string } }>(
 );
 const bookBonfiglioli = Object.keys(bookBonfiglioliMods)
   .sort()
-  .map((k) => bookBonfiglioliMods[k]!.default.url);
+  .map((k) => bookBonfiglioliMods[k]?.default.url)
+  .filter((url): url is string => Boolean(url));
 
 const fotosBonfiglioli = [
   fachadaBonfiglioli.url,
