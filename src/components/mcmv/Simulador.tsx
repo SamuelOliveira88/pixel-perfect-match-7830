@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { zap } from "@/data/empreendimentos";
+import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 const PRAZO_MESES = 360;
 const fmt = (v: number) =>
@@ -120,6 +121,10 @@ export function Simulador() {
           target="_blank"
           rel="noopener"
           href={zap("Olá, fiz uma simulação no site e quero falar com um consultor.")}
+          onClick={onClickWhatsApp(
+            zap("Olá, fiz uma simulação no site e quero falar com um consultor."),
+            "Simulador - Falar com consultor",
+          )}
         >
           Falar com consultor
         </a>
