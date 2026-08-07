@@ -58,6 +58,10 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
           target="_blank"
           rel="noopener noreferrer"
           href={zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`)}
+          onClick={onClickWhatsApp(
+            zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`),
+            `SIMULAÇÃO GRÁTIS - ${emp.nome}`,
+          )}
         >
           SIMULAÇÃO GRÁTIS
         </a>
