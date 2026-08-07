@@ -95,6 +95,7 @@ export const empreendimentos: Empreendimento[] = [
   },
   {
     nome: "Vibra Paes de Barros",
+    destaque: true,
     zona: "Zona Leste",
     itens: [
       "No coração da Mooca, na Av. Paes de Barros",
