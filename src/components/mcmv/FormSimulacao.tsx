@@ -17,7 +17,7 @@ export function FormSimulacao() {
   const [enviado, setEnviado] = useState(false);
   const [erro, setErro] = useState("");
 
-  async function enviarFormulario(e: React.FormEvent<HTMLFormElement>) {
+  async function enviarFormulario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setEnviando(true);
     setErro("");
