@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 const campo =
   "w-full rounded-[10px] border border-[#40507a] bg-[#27385f] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
