@@ -94,6 +94,18 @@ export const empreendimentos: Empreendimento[] = [
     fotos: fotosBonfiglioli,
   },
   {
+    nome: "Vibra Paes de Barros",
+    zona: "Zona Leste",
+    itens: [
+      "No coração da Mooca, na Av. Paes de Barros",
+      "1 e 2 quartos, de 26m² a 44m², com varanda",
+      "A 7 min da Estação Vila Prudente",
+      "Piscina, academia, salão de festas e minimercado",
+      "Unidades HIS: ITBI e Registro grátis",
+    ],
+    fotos: fotosPaesDeBarros,
+  },
+  {
     nome: "Vibra Estação Campo Limpo",
     zona: "Zona Sul",
     itens: [
