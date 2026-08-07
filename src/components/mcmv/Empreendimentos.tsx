@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { empreendimentos, zap, type Empreendimento } from "@/data/empreendimentos";
+import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => void }) {
   return (
