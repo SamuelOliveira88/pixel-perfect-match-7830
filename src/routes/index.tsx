@@ -3,6 +3,7 @@ import { Empreendimentos } from "@/components/mcmv/Empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { Simulador } from "@/components/mcmv/Simulador";
 import { zap } from "@/data/empreendimentos";
+import { onClickWhatsApp } from "@/lib/leadWebhook";
 import fachada from "@/assets/emp-fachada.jpg";
 import videoBonfiglioli from "@/assets/jd-bonfiglioli.mp4.asset.json";
 import lazer from "@/assets/emp-lazer.jpg";
@@ -75,6 +76,7 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={onClickWhatsApp(linkZap, "Header - SIMULAÇÃO GRATUITA")}
             className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark"
           >
             SIMULAÇÃO GRATUITA
@@ -227,6 +229,7 @@ function Index() {
             href={linkZap}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={onClickWhatsApp(linkZap, "Simule já - CONHEÇA AGORA")}
             className="btn-base bg-primary-dark text-primary-foreground shadow-lg hover:bg-primary"
           >
             CONHEÇA AGORA
@@ -259,6 +262,10 @@ function Index() {
                   href={zap("Olá, vim pelo site MCMV e gostaria de mais informações.")}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={onClickWhatsApp(
+                    zap("Olá, vim pelo site MCMV e gostaria de mais informações."),
+                    "Rodapé - WhatsApp",
+                  )}
                   className="hover:underline"
                 >
                   (11) 9.9992-2344
@@ -308,6 +315,7 @@ function Index() {
         href={linkZap}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={onClickWhatsApp(linkZap, "Botão flutuante WhatsApp")}
         aria-label="Falar no WhatsApp"
         className="animate-zap-pulse fixed right-6 bottom-6 z-100 flex size-15 items-center justify-center rounded-full bg-primary text-3xl text-primary-foreground"
       >
