@@ -23,10 +23,10 @@ export async function registrarCliqueWhatsApp(origem: string) {
     origem,
     pagina: typeof window === "undefined" ? "" : window.location.href,
   };
-  if (nome) payload.nome = nome;
-  if (telefone) payload.telefone = telefone;
-  if (email) payload.email = email;
-  if (!nome) payload.nome = `Clique WhatsApp - ${origem}`;
+  if (nome) payload['nome'] = nome;
+  if (telefone) payload['telefone'] = telefone;
+  if (email) payload['email'] = email;
+  if (!nome) payload['nome'] = `Clique WhatsApp - ${origem}`;
 
   const controller = new AbortController();
   const t = setTimeout(() => controller.abort(), TIMEOUT_MS);
