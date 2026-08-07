@@ -74,9 +74,18 @@ export function FormSimulacao() {
         </div>
 
         <div>
-          <label htmlFor="renda" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
-            &nbsp;
+          <label htmlFor="email" className="mb-2.5 block text-sm font-semibold text-[#f2f2f0]">
+            E-mail <span className="text-[#d99a3d]">*</span>
           </label>
+          <input
+            id="email"
+            type="email"
+            placeholder="voce@email.com"
+            className={campo}
+            required
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
 
         <div>
