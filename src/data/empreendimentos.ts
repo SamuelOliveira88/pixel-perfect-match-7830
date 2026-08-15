@@ -74,6 +74,12 @@ const bookPaesMods = import.meta.glob<{ default: { url: string } }>(
 );
 const fotosPaesDeBarros = urlsFromGlob(bookPaesMods);
 
+const bookBelenzinhoMods = import.meta.glob<{ default: { url: string } }>(
+  "../assets/bookbz/*.asset.json",
+  { eager: true },
+);
+const fotosBelenzinho = urlsFromGlob(bookBelenzinhoMods);
+
 export type Empreendimento = {
   nome: string;
   destaque?: boolean;
@@ -177,5 +183,17 @@ export const empreendimentos: Empreendimento[] = [
       "Unidades HIS: ITBI e Registro grátis",
     ],
     fotos: fotosPaesDeBarros,
+  },
+  {
+    nome: "Vibra Belenzinho",
+    zona: "Zona Leste",
+    itens: [
+      "No Belenzinho, zona leste de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Perto de metrô, comércio e serviços",
+      "Piscina, academia, salão de festas e coworking",
+      "Condomínio fechado com segurança",
+    ],
+    fotos: fotosBelenzinho,
   },
 ];
