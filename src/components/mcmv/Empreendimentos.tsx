@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { empreendimentos, zap, type Empreendimento } from "@/data/empreendimentos";
+import { empreendimentos, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => void }) {
