@@ -83,7 +83,7 @@ function Index() {
             <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
               🔥 Lançamento
             </span>
-            Conheça o Vibra Jardim Bonfiglioli
+            Conheça o Jardim Bonfiglioli
           </div>
           <video
             src={videoBonfiglioli.url}

@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getEmpreendimentoPorSlug, zap } from "@/data/empreendimentos";
+import { getEmpreendimentoPorSlug, nomeExibicao, zap } from "@/data/empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
@@ -7,7 +7,7 @@ export const Route = createFileRoute("/empreendimento/$slug")({
   loader: ({ params }) => {
     const emp = getEmpreendimentoPorSlug(params.slug);
     if (!emp) throw notFound();
-    return { nome: emp.nome, zona: emp.zona, resumo: emp.itens[0] ?? "" };
+    return { nome: nomeExibicao(emp.nome), zona: emp.zona, resumo: emp.itens[0] ?? "" };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
@@ -53,7 +53,8 @@ function DetalheEmpreendimento() {
   const lazer = emp.fotos.slice(1, 3);
   const planta = emp.fotos.length > 3 ? emp.fotos[emp.fotos.length - 1] : undefined;
   const temPlanta = emp.itens.some((i) => /planta/i.test(i));
-  const mensagem = `Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`;
+  const exibicao = nomeExibicao(emp.nome);
+  const mensagem = `Olá, visitei o site MCMV e quero fazer uma simulação do ${exibicao}.`;
   const condicoes = emp.itens.filter((i) => /(renda|subsídio|subsidio|financiamento|fgts|420)/i.test(i));
   const sobre = emp.itens.filter((i) => !condicoes.includes(i));
 
@@ -63,7 +64,7 @@ function DetalheEmpreendimento() {
         {fachada && (
           <img
             src={fachada}
-            alt={`Fachada do ${emp.nome}`}
+            alt={`Fachada do ${exibicao}`}
             className="h-[46vh] min-h-[280px] w-full object-cover"
           />
         )}
@@ -72,7 +73,7 @@ function DetalheEmpreendimento() {
           <span className="mb-3 inline-flex rounded-full bg-accent px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent-foreground">
             {emp.zona}
           </span>
-          <h1 className="text-3xl font-extrabold text-white md:text-4xl">{emp.nome}</h1>
+          <h1 className="text-3xl font-extrabold text-white md:text-4xl">{exibicao}</h1>
           <p className="mt-1 font-bold text-white/85">Minha Casa Minha Vida · HIS</p>
         </div>
       </section>
@@ -98,7 +99,7 @@ function DetalheEmpreendimento() {
                 <figure key={f} className="overflow-hidden rounded-[18px] bg-card shadow-[0_10px_30px_rgba(0,0,0,.08)]">
                   <img
                     src={f}
-                    alt={`${emp.nome} - ${legendasLazer[i] ?? "Lazer"}`}
+                    alt={`${exibicao} - ${legendasLazer[i] ?? "Lazer"}`}
                     loading="lazy"
                     decoding="async"
                     className="h-64 w-full object-cover"
@@ -118,7 +119,7 @@ function DetalheEmpreendimento() {
             <figure className="mx-auto max-w-2xl overflow-hidden rounded-[18px] bg-card shadow-[0_10px_30px_rgba(0,0,0,.08)]">
               <img
                 src={planta}
-                alt={`${emp.nome} - ${temPlanta ? "planta" : "ambientes"}`}
+                alt={`${exibicao} - ${temPlanta ? "planta" : "ambientes"}`}
                 loading="lazy"
                 decoding="async"
                 className="w-full object-contain"
@@ -148,14 +149,14 @@ function DetalheEmpreendimento() {
           <div>
             <h2 className="mb-3 text-2xl font-extrabold text-primary">Faça sua simulação grátis</h2>
             <p className="mb-6 text-muted-foreground">
-              Preencha seus dados e a corretora Simone Villar retorna com a simulação do {emp.nome}.
+              Preencha seus dados e a corretora Simone Villar retorna com a simulação do {exibicao}.
             </p>
             <a
               className="btn-base w-full bg-primary text-primary-foreground hover:bg-primary-dark sm:w-auto sm:px-8"
               target="_blank"
               rel="noopener noreferrer"
               href={zap(mensagem)}
-              onClick={onClickWhatsApp(zap(mensagem), `PÁGINA DETALHE - ${emp.nome}`)}
+              onClick={onClickWhatsApp(zap(mensagem), `PÁGINA DETALHE - ${exibicao}`)}
             >
               Falar no WhatsApp
             </a>
