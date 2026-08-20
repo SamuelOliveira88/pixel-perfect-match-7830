@@ -68,17 +68,8 @@ const fotosJoaoDias = [jd3.url, jd4.url, jd5.url, jd2.url, jd1.url];
 const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
 const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
-const bookPaesMods = import.meta.glob<{ default: { url: string } }>(
-  "../assets/bookpb/*.asset.json",
-  { eager: true },
-);
-const fotosPaesDeBarros = urlsFromGlob(bookPaesMods);
+const drive = (ids: string[]) => ids.map((id) => `https://lh3.googleusercontent.com/d/${id}`);
 
-const bookBelenzinhoMods = import.meta.glob<{ default: { url: string } }>(
-  "../assets/bookbz/*.asset.json",
-  { eager: true },
-);
-const fotosBelenzinho = urlsFromGlob(bookBelenzinhoMods);
 
 export const ZONAS = ["Zona Norte", "Zona Sul", "Zona Leste", "Zona Oeste"] as const;
 export type Zona = (typeof ZONAS)[number];
