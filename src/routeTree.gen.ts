@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as PrivacidadeRouteImport } from './routes/privacidade'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TermosRouteImport } from './routes/termos'
+import { Route as EmpreendimentoSlugRouteImport } from './routes/empreendimento.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -34,18 +35,25 @@ const TermosRoute = TermosRouteImport.update({
   path: '/termos',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EmpreendimentoSlugRoute = EmpreendimentoSlugRouteImport.update({
+  id: '/empreendimento/$slug',
+  path: '/empreendimento/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/empreendimento/$slug': typeof EmpreendimentoSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/empreendimento/$slug': typeof EmpreendimentoSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -53,13 +61,21 @@ export interface FileRoutesById {
   '/privacidade': typeof PrivacidadeRoute
   '/sobre': typeof SobreRoute
   '/termos': typeof TermosRoute
+  '/empreendimento/$slug': typeof EmpreendimentoSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacidade' | '/sobre' | '/termos'
+  fullPaths:
+    '/' | '/privacidade' | '/sobre' | '/termos' | '/empreendimento/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacidade' | '/sobre' | '/termos'
-  id: '__root__' | '/' | '/privacidade' | '/sobre' | '/termos'
+  to: '/' | '/privacidade' | '/sobre' | '/termos' | '/empreendimento/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/privacidade'
+    | '/sobre'
+    | '/termos'
+    | '/empreendimento/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -67,6 +83,7 @@ export interface RootRouteChildren {
   PrivacidadeRoute: typeof PrivacidadeRoute
   SobreRoute: typeof SobreRoute
   TermosRoute: typeof TermosRoute
+  EmpreendimentoSlugRoute: typeof EmpreendimentoSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -99,6 +116,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermosRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/empreendimento/$slug': {
+      id: '/empreendimento/$slug'
+      path: '/empreendimento/$slug'
+      fullPath: '/empreendimento/$slug'
+      preLoaderRoute: typeof EmpreendimentoSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -107,6 +131,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivacidadeRoute: PrivacidadeRoute,
   SobreRoute: SobreRoute,
   TermosRoute: TermosRoute,
+  EmpreendimentoSlugRoute: EmpreendimentoSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

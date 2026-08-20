@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { empreendimentos, getEmpreendimentoPorSlug, slugify, zap } from "@/data/empreendimentos";
+import { getEmpreendimentoPorSlug, zap } from "@/data/empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
@@ -172,5 +172,3 @@ function DetalheEmpreendimento() {
     </main>
   );
 }
-
-export const rotasEmpreendimentos = empreendimentos.map((e) => slugify(e.nome));
