@@ -4,26 +4,11 @@ import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
 import bonf3 from "@/assets/emp/bonfiglioli-3_1.jpg.asset.json";
 import bonf4 from "@/assets/emp/bonfiglioli-4_1.jpg.asset.json";
 import bonf5 from "@/assets/emp/bonfiglioli-5_1.jpg.asset.json";
-import univ1 from "@/assets/emp/cidadeuniv-1_1.jpg.asset.json";
-import univ2 from "@/assets/emp/cidadeuniv-2_1.jpg.asset.json";
-import univ3 from "@/assets/emp/cidadeuniv-3_1.jpg.asset.json";
-import univ4 from "@/assets/emp/cidadeuniv-4_1.jpg.asset.json";
-import univ5 from "@/assets/emp/cidadeuniv-5_1.jpg.asset.json";
 import gio1 from "@/assets/emp/giovanni-1_1.jpg.asset.json";
 import gio2 from "@/assets/emp/giovanni-2_1.jpg.asset.json";
 import gio3 from "@/assets/emp/giovanni-3_1.jpg.asset.json";
 import gio4 from "@/assets/emp/giovanni-4_1.jpg.asset.json";
 import gio5 from "@/assets/emp/giovanni-5_1.jpg.asset.json";
-import vs1 from "@/assets/emp/vilasonia-1_1.jpg.asset.json";
-import vs2 from "@/assets/emp/vilasonia-2_1.jpg.asset.json";
-import vs3 from "@/assets/emp/vilasonia-3_1.jpg.asset.json";
-import vs4 from "@/assets/emp/vilasonia-4_1.jpg.asset.json";
-import vs5 from "@/assets/emp/vilasonia-5_1.jpg.asset.json";
-import ev1 from "@/assets/emp/vilasoniaestacao-1_1.jpg.asset.json";
-import ev2 from "@/assets/emp/vilasoniaestacao-2_1.jpg.asset.json";
-import ev3 from "@/assets/emp/vilasoniaestacao-3_1.jpg.asset.json";
-import ev4 from "@/assets/emp/vilasoniaestacao-4_1.jpg.asset.json";
-import ev5 from "@/assets/emp/vilasoniaestacao-5_1.jpg.asset.json";
 
 export const WHATSAPP = "5511999922344";
 
