@@ -89,6 +89,8 @@
   --accent-dark: oklch(0.36 0.11 255);
   --brand-blue: oklch(0.48 0.13 255);
   --brand-blue-dark: oklch(0.36 0.11 255);
+  --cyan-accent: oklch(0.75 0.13 205);
+  --cyan-accent-soft: oklch(0.88 0.07 205);
   --whatsapp: oklch(0.655 0.175 45);
   --whatsapp-dark: oklch(0.565 0.165 42);
   --destructive: oklch(0.577 0.245 27.325);
