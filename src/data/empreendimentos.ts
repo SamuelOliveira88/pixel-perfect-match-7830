@@ -80,6 +80,9 @@ const bookBelenzinhoMods = import.meta.glob<{ default: { url: string } }>(
 );
 const fotosBelenzinho = urlsFromGlob(bookBelenzinhoMods);
 
+export const ZONAS = ["Zona Norte", "Zona Sul", "Zona Leste", "Zona Oeste"] as const;
+export type Zona = (typeof ZONAS)[number];
+
 export type Empreendimento = {
   nome: string;
   destaque?: boolean;
