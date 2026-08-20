@@ -4,26 +4,11 @@ import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
 import bonf3 from "@/assets/emp/bonfiglioli-3_1.jpg.asset.json";
 import bonf4 from "@/assets/emp/bonfiglioli-4_1.jpg.asset.json";
 import bonf5 from "@/assets/emp/bonfiglioli-5_1.jpg.asset.json";
-import univ1 from "@/assets/emp/cidadeuniv-1_1.jpg.asset.json";
-import univ2 from "@/assets/emp/cidadeuniv-2_1.jpg.asset.json";
-import univ3 from "@/assets/emp/cidadeuniv-3_1.jpg.asset.json";
-import univ4 from "@/assets/emp/cidadeuniv-4_1.jpg.asset.json";
-import univ5 from "@/assets/emp/cidadeuniv-5_1.jpg.asset.json";
 import gio1 from "@/assets/emp/giovanni-1_1.jpg.asset.json";
 import gio2 from "@/assets/emp/giovanni-2_1.jpg.asset.json";
 import gio3 from "@/assets/emp/giovanni-3_1.jpg.asset.json";
 import gio4 from "@/assets/emp/giovanni-4_1.jpg.asset.json";
 import gio5 from "@/assets/emp/giovanni-5_1.jpg.asset.json";
-import vs1 from "@/assets/emp/vilasonia-1_1.jpg.asset.json";
-import vs2 from "@/assets/emp/vilasonia-2_1.jpg.asset.json";
-import vs3 from "@/assets/emp/vilasonia-3_1.jpg.asset.json";
-import vs4 from "@/assets/emp/vilasonia-4_1.jpg.asset.json";
-import vs5 from "@/assets/emp/vilasonia-5_1.jpg.asset.json";
-import ev1 from "@/assets/emp/vilasoniaestacao-1_1.jpg.asset.json";
-import ev2 from "@/assets/emp/vilasoniaestacao-2_1.jpg.asset.json";
-import ev3 from "@/assets/emp/vilasoniaestacao-3_1.jpg.asset.json";
-import ev4 from "@/assets/emp/vilasoniaestacao-4_1.jpg.asset.json";
-import ev5 from "@/assets/emp/vilasoniaestacao-5_1.jpg.asset.json";
 
 export const WHATSAPP = "5511999922344";
 
@@ -51,10 +36,7 @@ const fotosBonfiglioli = [
   bonf4.url,
   bonf5.url,
 ];
-const fotosCidadeUniv = [univ5.url, univ4.url, univ2.url, univ3.url, univ1.url];
 const fotosGiovanni = [gio3.url, gio4.url, gio5.url, gio2.url, gio1.url];
-const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
-const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
 const drive = (ids: string[]) => ids.map((id) => `https://lh3.googleusercontent.com/d/${id}`);
 
@@ -147,7 +129,13 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia e mais",
       "Condomínio fechado com segurança",
     ],
-    fotos: fotosCidadeUniv,
+    fotos: drive([
+      "1CZON3e50yHiI2ZnKBmcyMi0SrSOkJPAM",
+      "1Gc21FCmNUiK16mju6hlVUsEpeF_6OSZl",
+      "1ZXvY94wvds2EzW_zl6-2GazBKnziDjWv",
+      "1RQmWEqiCJZ1eDoiNEh6Aid7mgZPylt0-",
+      "1cfk3S2IovzfomLHGCXT8Kv81k6-kRG_X",
+    ]),
   },
   {
     nome: "Vibra Parque Vila Sônia",
@@ -159,7 +147,13 @@ export const empreendimentos: Empreendimento[] = [
       "Mais de 10 espaços de lazer",
       "Condomínio fechado, portaria com clausura",
     ],
-    fotos: fotosParqueVilaSonia,
+    fotos: drive([
+      "1k-dbU7hkw1LQfi79qkd5inDSUWw1pm53",
+      "1UiHbEVsnRQpLNv6CYwBS5dsE4UNpRzvn",
+      "1v-db6U7xRF0leQqf76EzhwGme1Q81uub",
+      "10A-cDzoHTo9qvVyipt1RXP8HMqKyXyBL",
+      "1NhsUOqdQeKkAg9khGcpYdoFu59IW44S_",
+    ]),
   },
   {
     nome: "Vibra João Dias",
@@ -189,7 +183,31 @@ export const empreendimentos: Empreendimento[] = [
       "Churrasqueira, salão de festas, salão de jogos e sport bar",
       "Academia, brinquedoteca, playground e pet care",
     ],
-    fotos: fotosEstacaoVilaSonia,
+    fotos: drive([
+      "1Gx0ko_lrcFPHsoTxQaOF_P3rI2sZhl7R",
+      "1XelJXtE75Ete627ozmWXHaaOE7Q7o7EK",
+      "1Oso49XoNm9t5b8DFYutVhWl9GMy5_diX",
+      "1Gc0UCK_C8lRZa9ZE8MqBhi90Sk148p-E",
+      "1wibV7E757Hdjd_420LAjjjmajArsQMXr",
+    ]),
+  },
+  {
+    nome: "Vibra Vista Butantã",
+    zona: "Zona Oeste",
+    itens: [
+      "Bairro Butantã, Zona Oeste de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, espaço fitness e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "135_DOacO0PoVcZI5RCg5KDowyZHb2HgT",
+      "182XIDUGw9eUhxPz4ikGQLXYZjQ_--QeQ",
+      "1FrbU04BybmSEWIL-5QqoeopfpCIUlvST",
+      "1VUaSicvCK_2RsTMIEeSwnodoS-XM4ptw",
+      "16m79k2ebw4Pm_04_98q_JG2_xf0K5kYm",
+    ]),
   },
   {
     nome: "Vibra Estação Giovanni",
