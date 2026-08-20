@@ -50,6 +50,7 @@ export type Empreendimento = {
   zona: Zona;
   itens: string[];
   fotos: string[];
+  bookUrl: string;
 };
 
 export const empreendimentos: Empreendimento[] = [
@@ -65,6 +66,7 @@ export const empreendimentos: Empreendimento[] = [
       "Condomínio fechado com segurança",
     ],
     fotos: fotosBonfiglioli,
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-jardim-bonfiglioli/",
   },
   {
     nome: "Vibra Estação Campo Limpo",
@@ -83,6 +85,7 @@ export const empreendimentos: Empreendimento[] = [
       "1YnW-3T-OEkjmHymMW9AN4BT1Nzhnautt",
       "1KzfPxS-7fiWbkjAeucTDhJjq6-tdR6sV",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-estacao-campo-limpo/",
   },
   {
     nome: "Vibra Sabará",
@@ -101,6 +104,7 @@ export const empreendimentos: Empreendimento[] = [
       "1XyFFJtSdGYJ2Bpm5qkCQeU14pcDdZZze",
       "1u7750UcSvyLv8_UTJBXhvOpKIljgDboh",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-sabara/",
   },
   {
     nome: "Vibra Rio Bonito",
@@ -119,6 +123,7 @@ export const empreendimentos: Empreendimento[] = [
       "11CYSHrad7zqXxv7FxtcfT9YfDcrsMJaf",
       "18RVAMsmkSsWJO1DgyIEuMLhotol9E6DI",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-rio-bonito/",
   },
   {
     nome: "Vibra Parque Cidade Universitária",
@@ -136,6 +141,7 @@ export const empreendimentos: Empreendimento[] = [
       "1RQmWEqiCJZ1eDoiNEh6Aid7mgZPylt0-",
       "1cfk3S2IovzfomLHGCXT8Kv81k6-kRG_X",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/parque-cidade-universitaria/",
   },
   {
     nome: "Vibra Parque Vila Sônia",
@@ -154,6 +160,7 @@ export const empreendimentos: Empreendimento[] = [
       "10A-cDzoHTo9qvVyipt1RXP8HMqKyXyBL",
       "1NhsUOqdQeKkAg9khGcpYdoFu59IW44S_",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-parque-vila-sonia/",
   },
   {
     nome: "Vibra João Dias",
@@ -172,6 +179,7 @@ export const empreendimentos: Empreendimento[] = [
       "15V-F7cGtpTkMCKiuH6zbZKfQjONeSmep",
       "1SifrNaCiTlCF0Tuc4GLFRyP9XZLo3l-G",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-joao-dias/",
   },
   {
     nome: "Vibra Estação Vila Sônia",
@@ -190,6 +198,7 @@ export const empreendimentos: Empreendimento[] = [
       "1Gc0UCK_C8lRZa9ZE8MqBhi90Sk148p-E",
       "1wibV7E757Hdjd_420LAjjjmajArsQMXr",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-estacao-vila-sonia/",
   },
   {
     nome: "Vibra Vista Butantã",
@@ -208,6 +217,7 @@ export const empreendimentos: Empreendimento[] = [
       "1VUaSicvCK_2RsTMIEeSwnodoS-XM4ptw",
       "16m79k2ebw4Pm_04_98q_JG2_xf0K5kYm",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-vista-butanta/",
   },
   {
     nome: "Vibra Estação Giovanni",
@@ -220,6 +230,7 @@ export const empreendimentos: Empreendimento[] = [
       "Financiamento em até 420 vezes, com uso do FGTS",
     ],
     fotos: fotosGiovanni,
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-estacao-giovanni/",
   },
   {
     nome: "Vibra Paes de Barros",
@@ -238,6 +249,7 @@ export const empreendimentos: Empreendimento[] = [
       "1QlPlhQYtBrvUZGmvzJpg_yekrqrL1nRa",
       "1oYy_13pwZ9HBR6Mnm5n1DxGGxQxCvqET",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-paes-de-barros/",
   },
   {
     nome: "Vibra Belenzinho",
@@ -256,6 +268,7 @@ export const empreendimentos: Empreendimento[] = [
       "1tYDXN9W6NKtMvE28INByT3LtqFHgoKnA",
       "1GLN3pZyRA4H-ELsuu2-hKzUg_vqLewbk",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-belenzinho/",
   },
   {
     nome: "Vibra Mooca",
@@ -274,6 +287,7 @@ export const empreendimentos: Empreendimento[] = [
       "136D4neHNLHkuLdAKQ7ReS_9uuOwpGlQr",
       "1UIo7PkfNLD5GKL3fEL6Z3tsijLVM3b9S",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-mooca/",
   },
   {
     nome: "Vibra Conselheiro Carrão",
@@ -292,6 +306,7 @@ export const empreendimentos: Empreendimento[] = [
       "1Og0i6zLdWt1pEV1QHii4VRPOyuEHfqQ6",
       "1d1js7aHORl9oKyrUZYlx6C1ctRYJAb8G",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-conselheiro-carrao/",
   },
   {
     nome: "Vibra Parque Vila Prudente",
@@ -310,6 +325,7 @@ export const empreendimentos: Empreendimento[] = [
       "10QW0IRZnqEKISvWDQr2THbTHx3PqcMjL",
       "1VTRmtRRPf56Uvq71wN8iY8ickGh0wBsU",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-parque-vila-prudente/",
   },
   {
     nome: "Vibra Estação Vila Prudente",
@@ -328,6 +344,6 @@ export const empreendimentos: Empreendimento[] = [
       "1yaua8F18_eGwrKBM9Dl1NzC-wxekYPiO",
       "1g8pAwN6BxKNKPVLU--LAcT7dzpYE0Fcl",
     ]),
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-estacao-vila-prudente-2/",
   },
 ];
-
