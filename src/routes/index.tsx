@@ -91,10 +91,9 @@ function Index() {
             controls
             autoPlay
             muted
-            defaultValue=""
             loop
             playsInline
-            preload="none"
+            preload="metadata"
             onLoadedMetadata={(e) => {
               const v = e.currentTarget;
               v.muted = true;
