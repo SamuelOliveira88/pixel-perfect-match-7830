@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Empreendimentos } from "@/components/mcmv/Empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { Simulador } from "@/components/mcmv/Simulador";
+import { SiteHeader } from "@/components/mcmv/SiteHeader";
+import { SiteFooter } from "@/components/mcmv/SiteFooter";
 import { zap } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 import fachada from "@/assets/emp-fachada.jpg";
@@ -43,16 +45,6 @@ const beneficios = [
   "Subsídio do governo de acordo com sua faixa de renda",
 ];
 
-function abrirLink(url: string) {
-  const w = window.open(url, "_blank", "noopener,noreferrer");
-  if (!w) {
-    try {
-      (window.top ?? window).location.href = url;
-    } catch {
-      window.location.href = url;
-    }
-  }
-}
 
 function Index() {
   const msgZap = "Olá, visitei o site MCMV e quero fazer uma simulação grátis.";
@@ -60,34 +52,27 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 bg-card shadow-[0_2px_10px_rgba(0,0,0,.06)]">
-        <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-between gap-5 px-5 py-3.5">
-          <span className="text-xl leading-tight font-extrabold tracking-tight text-primary">
-            Villar
-            <span className="block text-xs font-semibold tracking-[0.25em] text-accent-dark">IMÓVEIS</span>
-          </span>
-          <div className="min-w-[220px] flex-1 text-center text-xl font-extrabold leading-snug text-primary md:text-2xl">
-            O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
-          </div>
-          <a href="#simulador" className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark">
-            SIMULAR AGORA
-          </a>
-          <a
-            href={linkZap}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={onClickWhatsApp(linkZap, "Header - SIMULAÇÃO GRATUITA")}
-            className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark"
-          >
-            SIMULAÇÃO GRATUITA
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <section className="bg-gradient-to-br from-primary to-primary-dark py-6 pb-8">
+      <section id="destaque" className="bg-gradient-to-br from-primary to-primary-dark py-10">
         <div className="mx-auto max-w-[1100px] px-5">
-          <div className="mx-auto max-w-[900px] rounded-[22px] bg-card p-4 pb-5 shadow-[0_18px_40px_rgba(0,0,0,.25)]">
-            <div className="mb-3.5 flex items-center justify-center gap-2.5 text-center font-extrabold text-primary">
+          <h2 className="mb-1 text-center text-2xl leading-snug font-extrabold text-primary-foreground md:text-3xl">
+            O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
+          </h2>
+          <p className="mb-6 text-center text-sm text-primary-foreground/80">
+            Lançamento em destaque desta semana
+          </p>
+          <div
+            className="mx-auto max-w-[900px] rounded-[24px] border-[3px] border-cyan-accent bg-card p-4 pb-5"
+            style={{
+              boxShadow:
+                "0 0 0 6px color-mix(in oklch, var(--cyan-accent) 18%, transparent), 0 22px 60px -12px color-mix(in oklch, var(--cyan-accent) 55%, transparent)",
+            }}
+          >
+            <div className="mb-3.5 flex flex-wrap items-center justify-center gap-2.5 text-center font-extrabold text-primary">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-accent px-3.5 py-1 text-xs font-extrabold tracking-wide text-accent-dark uppercase">
+                ▶ Vídeo em destaque
+              </span>
               <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
                 🔥 Lançamento
               </span>
@@ -102,7 +87,7 @@ function Index() {
               loop
               playsInline
               preload="metadata"
-              className="max-h-[520px] w-full rounded-xl bg-black object-cover"
+              className="max-h-[520px] w-full rounded-xl border-2 border-cyan-accent/60 bg-black object-cover"
             />
             <div className="mt-3 text-center text-sm text-muted-foreground">
               Veja o empreendimento e agende sua visita
@@ -111,7 +96,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary py-15 text-primary-foreground">
+      <section id="simulacao" className="relative overflow-hidden bg-primary py-15 text-primary-foreground">
         <div className="mx-auto grid max-w-[1100px] items-start gap-12 px-5 md:grid-cols-[1.1fr_.9fr]">
           <div>
             <h1 className="mb-4.5 text-3xl leading-tight font-extrabold uppercase md:text-4xl">
@@ -184,7 +169,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-secondary py-16">
+      <section id="sobre" className="bg-secondary py-16">
         <div className="mx-auto max-w-[1100px] px-5">
           <h2 className="mb-10 text-center text-3xl font-extrabold text-primary">Quem sou eu?</h2>
           <div className="grid items-center gap-10 rounded-3xl bg-gradient-to-br from-card to-secondary p-10 text-center shadow-[0_10px_30px_rgba(0,0,0,.06)] md:grid-cols-[220px_1fr] md:text-left">
@@ -237,79 +222,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className="bg-primary-dark py-12 pb-6 text-primary-foreground">
-        <div className="mx-auto max-w-[1100px] px-5">
-          <div className="mb-7 grid gap-7 sm:grid-cols-3">
-            <div>
-              <h3 className="mb-3.5 font-bold">Endereço</h3>
-              <p className="text-sm opacity-85">
-                Estrada São Francisco, 2008
-                <br />
-                São Paulo – SP
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-3.5 font-bold">Contato</h3>
-              <p className="text-sm opacity-85">
-                📞{" "}
-                <a href="tel:+5511999922344" className="hover:underline">
-                  (11) 9.9992-2344
-                </a>
-              </p>
-              <p className="text-sm opacity-85">
-                💬{" "}
-                <a
-                  href={zap("Olá, vim pelo site MCMV e gostaria de mais informações.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={onClickWhatsApp(
-                    zap("Olá, vim pelo site MCMV e gostaria de mais informações."),
-                    "Rodapé - WhatsApp",
-                  )}
-                  className="hover:underline"
-                >
-                  (11) 9.9992-2344
-                </a>
-              </p>
-              <p className="text-sm opacity-85">CRECI 189.434-F 42581-J</p>
-            </div>
-            <div>
-              <h3 className="mb-3.5 font-bold">Conheça minhas redes</h3>
-              <div className="flex gap-3">
-                <a
-                  href="https://www.facebook.com/villarcorretoradeimoveis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    abrirLink("https://www.facebook.com/villarcorretoradeimoveis");
-                  }}
-                  className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
-                >
-                  f
-                </a>
-                <a
-                  href="https://www.instagram.com/simonevillarimob/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    abrirLink("https://www.instagram.com/simonevillarimob/");
-                  }}
-                  className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
-                >
-                  ◎
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-primary-foreground/15 pt-5 text-center text-xs opacity-75">
-            © 2026 Villar Imóveis — Todos os direitos reservados.
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <a
         href={linkZap}

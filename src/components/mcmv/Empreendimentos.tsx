@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { empreendimentos, zap, type Empreendimento } from "@/data/empreendimentos";
+import { empreendimentos, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => void }) {
@@ -73,6 +73,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
 
 export function Empreendimentos() {
   const [book, setBook] = useState<{ emp: number; foto: number } | null>(null);
+  const [aba, setAba] = useState<"Todos" | Zona>("Todos");
 
   const mover = useCallback((passo: number) => {
     setBook((b) => {
@@ -80,6 +81,17 @@ export function Empreendimentos() {
       const total = empreendimentos[b.emp]?.fotos.length ?? 1;
       return { ...b, foto: (b.foto + passo + total) % total };
     });
+  }, []);
+
+  useEffect(() => {
+    const onZona = (e: Event) => {
+      const detalhe = (e as CustomEvent<string>).detail;
+      if (detalhe === "Todos" || (ZONAS as readonly string[]).includes(detalhe)) {
+        setAba(detalhe as "Todos" | Zona);
+      }
+    };
+    window.addEventListener("mcmv:zona", onZona);
+    return () => window.removeEventListener("mcmv:zona", onZona);
   }, []);
 
   useEffect(() => {
@@ -97,10 +109,10 @@ export function Empreendimentos() {
     };
   }, [book, mover]);
 
-  const destaques = empreendimentos.filter((e) => e.destaque);
-  const demais = empreendimentos.filter((e) => !e.destaque);
-  const ordemZonas = ["Zona Sul", "Zona Oeste", "Zona Leste"] as const;
-  const zonasComCards = ordemZonas
+  const visiveis = empreendimentos.filter((e) => aba === "Todos" || e.zona === aba);
+  const destaques = visiveis.filter((e) => e.destaque);
+  const demais = visiveis.filter((e) => !e.destaque);
+  const zonasComCards = ZONAS
     .map((zona) => ({ zona, lista: demais.filter((e) => e.zona === zona) }))
     .filter((z) => z.lista.length > 0);
   const atual = book ? empreendimentos[book.emp] : null;
@@ -119,6 +131,36 @@ export function Empreendimentos() {
             Selecionamos os melhores lançamentos MCMV da região para você
           </p>
         </div>
+
+        <div className="mb-10 flex flex-wrap justify-center gap-2.5">
+          {(["Todos", ...ZONAS] as const).map((z) => {
+            const ativo = aba === z;
+            const total = z === "Todos" ? empreendimentos.length : empreendimentos.filter((e) => e.zona === z).length;
+            return (
+              <button
+                key={z}
+                type="button"
+                onClick={() => setAba(z)}
+                aria-pressed={ativo}
+                className={`rounded-full border-2 px-5 py-2 text-sm font-extrabold transition-colors ${
+                  ativo
+                    ? "border-primary bg-primary text-primary-foreground"
+                    : "border-border bg-card text-primary hover:border-primary"
+                }`}
+              >
+                {z}
+                <span className={`ml-2 text-xs ${ativo ? "opacity-80" : "text-muted-foreground"}`}>{total}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {visiveis.length === 0 && (
+          <p className="mb-4 rounded-2xl bg-secondary px-6 py-10 text-center text-muted-foreground">
+            Ainda não temos empreendimentos cadastrados nesta zona. Fale com a Simone no WhatsApp para receber as
+            novidades assim que forem lançadas.
+          </p>
+        )}
 
         {destaques.length > 0 && (
           <div className="mb-12">
