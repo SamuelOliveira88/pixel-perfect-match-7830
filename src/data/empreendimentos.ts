@@ -44,7 +44,21 @@ const drive = (ids: string[]) => ids.map((id) => `https://lh3.googleusercontent.
 export const ZONAS = ["Zona Norte", "Zona Sul", "Zona Leste", "Zona Oeste"] as const;
 export type Zona = (typeof ZONAS)[number];
 
-export type Empreendimento = {
+export type FichaTecnica = {
+  endereco?: string;
+  statusObra?: string;
+  torres?: number;
+  unidadesTotais?: number;
+  tipologiasMetragens?: string;
+  precoAPartirDe?: string;
+  faixasMCMV?: string;
+  vagasGaragem?: string;
+  transporte?: string;
+  tourVirtualUrl?: string;
+  lazerCompleto?: string[];
+};
+
+export type Empreendimento = FichaTecnica & {
   nome: string;
   destaque?: boolean;
   zona: Zona;
@@ -52,6 +66,7 @@ export type Empreendimento = {
   fotos: string[];
   bookUrl: string;
 };
+
 
 export const empreendimentos: Empreendimento[] = [
   {
