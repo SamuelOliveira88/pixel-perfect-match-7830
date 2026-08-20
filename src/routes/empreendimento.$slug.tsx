@@ -44,6 +44,15 @@ function NaoEncontrado() {
 
 const legendasLazer = ["Piscina", "Área de lazer"];
 
+function FichaLinha({ rotulo, valor }: { rotulo: string; valor: string }) {
+  return (
+    <div className="rounded-[14px] bg-card p-4 shadow-[0_6px_20px_rgba(0,0,0,.06)]">
+      <dt className="text-xs font-extrabold uppercase tracking-[0.1em] text-accent">{rotulo}</dt>
+      <dd className="mt-1 text-sm font-semibold text-muted-foreground">{valor}</dd>
+    </div>
+  );
+}
+
 function DetalheEmpreendimento() {
   const { slug } = Route.useParams();
   const emp = getEmpreendimentoPorSlug(slug);
@@ -57,6 +66,17 @@ function DetalheEmpreendimento() {
   const mensagem = `Olá, visitei o site MCMV e quero fazer uma simulação do ${exibicao}.`;
   const condicoes = emp.itens.filter((i) => /(renda|subsídio|subsidio|financiamento|fgts|420)/i.test(i));
   const sobre = emp.itens.filter((i) => !condicoes.includes(i));
+
+  const ficha: Array<[string, string | undefined]> = [
+    ["Endereço", emp.endereco],
+    ["Status da obra", emp.statusObra],
+    ["Torres", emp.torres ? String(emp.torres) : undefined],
+    ["Unidades totais", emp.unidadesTotais ? String(emp.unidadesTotais) : undefined],
+    ["Tipologias e metragens", emp.tipologiasMetragens],
+    ["Vagas de garagem", emp.vagasGaragem],
+    ["Transporte", emp.transporte],
+  ];
+  const fichaItens = ficha.filter((f): f is [string, string] => Boolean(f[1]));
 
   return (
     <main>
@@ -79,6 +99,17 @@ function DetalheEmpreendimento() {
       </section>
 
       <div className="mx-auto max-w-[1100px] space-y-14 px-5 py-14">
+        {emp.tourVirtualUrl && (
+          <a
+            href={emp.tourVirtualUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-base inline-flex bg-accent px-7 text-accent-foreground hover:opacity-90"
+          >
+            Tour Virtual 360°
+          </a>
+        )}
+
         <section>
           <h2 className="mb-4 text-2xl font-extrabold text-primary">Sobre o empreendimento</h2>
           <ul className="space-y-2">
@@ -91,25 +122,51 @@ function DetalheEmpreendimento() {
           </ul>
         </section>
 
-        {lazer.length > 0 && (
+        {fichaItens.length > 0 && (
+          <section>
+            <h2 className="mb-4 text-2xl font-extrabold text-primary">Ficha técnica</h2>
+            <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {fichaItens.map(([rotulo, valor]) => (
+                <FichaLinha key={rotulo} rotulo={rotulo} valor={valor} />
+              ))}
+            </dl>
+          </section>
+        )}
+
+        {(emp.lazerCompleto?.length || lazer.length > 0) && (
           <section>
             <h2 className="mb-4 text-2xl font-extrabold text-primary">Lazer</h2>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {lazer.map((f, i) => (
-                <figure key={f} className="overflow-hidden rounded-[18px] bg-card shadow-[0_10px_30px_rgba(0,0,0,.08)]">
-                  <img
-                    src={f}
-                    alt={`${exibicao} - ${legendasLazer[i] ?? "Lazer"}`}
-                    loading="lazy"
-                    decoding="async"
-                    className="h-64 w-full object-cover"
-                  />
-                  <figcaption className="px-5 py-3 text-sm font-semibold text-muted-foreground">
-                    {legendasLazer[i] ?? "Espaço de lazer"}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            {emp.lazerCompleto?.length ? (
+              <ul className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+                {emp.lazerCompleto.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-center gap-2 rounded-[14px] bg-secondary px-4 py-3 text-sm font-semibold text-muted-foreground"
+                  >
+                    <span className="font-extrabold text-accent">✓</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+            {lazer.length > 0 && (
+              <div className="grid gap-6 sm:grid-cols-2">
+                {lazer.map((f, i) => (
+                  <figure key={f} className="overflow-hidden rounded-[18px] bg-card shadow-[0_10px_30px_rgba(0,0,0,.08)]">
+                    <img
+                      src={f}
+                      alt={`${exibicao} - ${legendasLazer[i] ?? "Lazer"}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-64 w-full object-cover"
+                    />
+                    <figcaption className="px-5 py-3 text-sm font-semibold text-muted-foreground">
+                      {legendasLazer[i] ?? "Espaço de lazer"}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            )}
           </section>
         )}
 
@@ -131,9 +188,17 @@ function DetalheEmpreendimento() {
           </section>
         )}
 
-        {condicoes.length > 0 && (
+        {(condicoes.length > 0 || emp.precoAPartirDe || emp.faixasMCMV) && (
           <section className="rounded-[18px] bg-secondary px-6 py-8">
             <h2 className="mb-4 text-2xl font-extrabold text-primary">Condições Minha Casa Minha Vida</h2>
+            {emp.precoAPartirDe && (
+              <p className="mb-3 text-lg font-extrabold text-primary">
+                A partir de <span className="text-accent">{emp.precoAPartirDe}</span>
+              </p>
+            )}
+            {emp.faixasMCMV && (
+              <p className="mb-4 text-sm font-semibold text-muted-foreground">{emp.faixasMCMV}</p>
+            )}
             <ul className="space-y-2">
               {condicoes.map((i) => (
                 <li key={i} className="relative pl-6 text-muted-foreground">
@@ -144,6 +209,7 @@ function DetalheEmpreendimento() {
             </ul>
           </section>
         )}
+
 
         <section className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
