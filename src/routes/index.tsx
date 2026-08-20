@@ -54,10 +54,25 @@ function Index() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <section className="bg-gradient-to-br from-primary to-primary-dark py-6 pb-8">
+      <section id="destaque" className="bg-gradient-to-br from-primary to-primary-dark py-10">
         <div className="mx-auto max-w-[1100px] px-5">
-          <div className="mx-auto max-w-[900px] rounded-[22px] bg-card p-4 pb-5 shadow-[0_18px_40px_rgba(0,0,0,.25)]">
-            <div className="mb-3.5 flex items-center justify-center gap-2.5 text-center font-extrabold text-primary">
+          <h2 className="mb-1 text-center text-2xl leading-snug font-extrabold text-primary-foreground md:text-3xl">
+            O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
+          </h2>
+          <p className="mb-6 text-center text-sm text-primary-foreground/80">
+            Lançamento em destaque desta semana
+          </p>
+          <div
+            className="mx-auto max-w-[900px] rounded-[24px] border-[3px] border-cyan-accent bg-card p-4 pb-5"
+            style={{
+              boxShadow:
+                "0 0 0 6px color-mix(in oklch, var(--cyan-accent) 18%, transparent), 0 22px 60px -12px color-mix(in oklch, var(--cyan-accent) 55%, transparent)",
+            }}
+          >
+            <div className="mb-3.5 flex flex-wrap items-center justify-center gap-2.5 text-center font-extrabold text-primary">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-accent px-3.5 py-1 text-xs font-extrabold tracking-wide text-accent-dark uppercase">
+                ▶ Vídeo em destaque
+              </span>
               <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
                 🔥 Lançamento
               </span>
@@ -72,7 +87,7 @@ function Index() {
               loop
               playsInline
               preload="metadata"
-              className="max-h-[520px] w-full rounded-xl bg-black object-cover"
+              className="max-h-[520px] w-full rounded-xl border-2 border-cyan-accent/60 bg-black object-cover"
             />
             <div className="mt-3 text-center text-sm text-muted-foreground">
               Veja o empreendimento e agende sua visita
@@ -81,7 +96,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary py-15 text-primary-foreground">
+      <section id="simulacao" className="relative overflow-hidden bg-primary py-15 text-primary-foreground">
         <div className="mx-auto grid max-w-[1100px] items-start gap-12 px-5 md:grid-cols-[1.1fr_.9fr]">
           <div>
             <h1 className="mb-4.5 text-3xl leading-tight font-extrabold uppercase md:text-4xl">
@@ -154,7 +169,7 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-secondary py-16">
+      <section id="sobre" className="bg-secondary py-16">
         <div className="mx-auto max-w-[1100px] px-5">
           <h2 className="mb-10 text-center text-3xl font-extrabold text-primary">Quem sou eu?</h2>
           <div className="grid items-center gap-10 rounded-3xl bg-gradient-to-br from-card to-secondary p-10 text-center shadow-[0_10px_30px_rgba(0,0,0,.06)] md:grid-cols-[220px_1fr] md:text-left">
