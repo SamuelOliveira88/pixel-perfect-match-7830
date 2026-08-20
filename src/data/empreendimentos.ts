@@ -4,11 +4,6 @@ import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
 import bonf3 from "@/assets/emp/bonfiglioli-3_1.jpg.asset.json";
 import bonf4 from "@/assets/emp/bonfiglioli-4_1.jpg.asset.json";
 import bonf5 from "@/assets/emp/bonfiglioli-5_1.jpg.asset.json";
-import camp1 from "@/assets/emp/campolimpo-1_1.jpg.asset.json";
-import camp2 from "@/assets/emp/campolimpo-2_1.jpg.asset.json";
-import camp3 from "@/assets/emp/campolimpo-3.jpg.asset.json";
-import camp4 from "@/assets/emp/campolimpo-4_1.jpg.asset.json";
-import camp5 from "@/assets/emp/campolimpo-5_1.jpg.asset.json";
 import univ1 from "@/assets/emp/cidadeuniv-1_1.jpg.asset.json";
 import univ2 from "@/assets/emp/cidadeuniv-2_1.jpg.asset.json";
 import univ3 from "@/assets/emp/cidadeuniv-3_1.jpg.asset.json";
@@ -19,11 +14,6 @@ import gio2 from "@/assets/emp/giovanni-2_1.jpg.asset.json";
 import gio3 from "@/assets/emp/giovanni-3_1.jpg.asset.json";
 import gio4 from "@/assets/emp/giovanni-4_1.jpg.asset.json";
 import gio5 from "@/assets/emp/giovanni-5_1.jpg.asset.json";
-import jd1 from "@/assets/emp/joaodias-1_1.jpg.asset.json";
-import jd2 from "@/assets/emp/joaodias-2_1.jpg.asset.json";
-import jd3 from "@/assets/emp/joaodias-3_1.jpg.asset.json";
-import jd4 from "@/assets/emp/joaodias-4_1.jpg.asset.json";
-import jd5 from "@/assets/emp/joaodias-5_1.jpg.asset.json";
 import vs1 from "@/assets/emp/vilasonia-1_1.jpg.asset.json";
 import vs2 from "@/assets/emp/vilasonia-2_1.jpg.asset.json";
 import vs3 from "@/assets/emp/vilasonia-3_1.jpg.asset.json";
@@ -61,10 +51,8 @@ const fotosBonfiglioli = [
   bonf4.url,
   bonf5.url,
 ];
-const fotosCampoLimpo = [camp3.url, camp2.url, camp4.url, camp5.url, camp1.url];
 const fotosCidadeUniv = [univ5.url, univ4.url, univ2.url, univ3.url, univ1.url];
 const fotosGiovanni = [gio3.url, gio4.url, gio5.url, gio2.url, gio1.url];
-const fotosJoaoDias = [jd3.url, jd4.url, jd5.url, jd2.url, jd1.url];
 const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
 const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
@@ -100,12 +88,55 @@ export const empreendimentos: Empreendimento[] = [
     nome: "Vibra Estação Campo Limpo",
     zona: "Zona Sul",
     itens: [
-      "Lançamento Vibra Residencial",
-      "1 e 2 quartos, com varanda",
-      "Piscina, academia e mais",
-      "Condomínio fechado com segurança",
+      "Ao lado do Metrô Campo Limpo e do Shopping Campo Limpo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, academia, playground e minimercado",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
     ],
-    fotos: fotosCampoLimpo,
+    fotos: drive([
+      "1FBCJQN_sDa2Syu_iKsuIe661Lt1cBLyK",
+      "1hT35S7yiEaIiaPHkg2iPCOXr-aKM2dr7",
+      "1fJUeTM7xFjYmqL442Ob3lqIdffe-yfdk",
+      "1YnW-3T-OEkjmHymMW9AN4BT1Nzhnautt",
+      "1KzfPxS-7fiWbkjAeucTDhJjq6-tdR6sV",
+    ]),
+  },
+  {
+    nome: "Vibra Sabará",
+    zona: "Zona Sul",
+    itens: [
+      "Zona sul de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, academia e salão de jogos",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "11Moj8Axi_Oj-c3flnb-F7vtybXYfNDhY",
+      "18Ei6FJYG1CRORVd4SDV56VG-pzTlKOkm",
+      "1Wjhq5kzhmJKWHgvq9yRFLsnTQl3jTfC6",
+      "1XyFFJtSdGYJ2Bpm5qkCQeU14pcDdZZze",
+      "1u7750UcSvyLv8_UTJBXhvOpKIljgDboh",
+    ]),
+  },
+  {
+    nome: "Vibra Rio Bonito",
+    zona: "Zona Sul",
+    itens: [
+      "Zona sul de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, academia e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "157oXd7NIrrA2dAsQa9UHmsmcZgXyQI12",
+      "1x0JaQIJWUhiUq1kNrgnEMMtjrMushqym",
+      "1UDDvWsz5PE5L0kB-ZD3pjCMYfrCBJXed",
+      "11CYSHrad7zqXxv7FxtcfT9YfDcrsMJaf",
+      "18RVAMsmkSsWJO1DgyIEuMLhotol9E6DI",
+    ]),
   },
   {
     nome: "Vibra Parque Cidade Universitária",
@@ -140,7 +171,13 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia, coworking, espaço beleza e pet place",
       "Perto da Av. Giovanni Gronchi e Marginal Pinheiros",
     ],
-    fotos: fotosJoaoDias,
+    fotos: drive([
+      "1M42_liHFkAVRbcPqkM__caGpRpA1LzER",
+      "13bVgUKdIe1JC-L2Wm1MMXC64FoCT5TLl",
+      "1_p-uu8bmEm_8IbSMXagc6kRkorUJJdY-",
+      "15V-F7cGtpTkMCKiuH6zbZKfQjONeSmep",
+      "1SifrNaCiTlCF0Tuc4GLFRyP9XZLo3l-G",
+    ]),
   },
   {
     nome: "Vibra Estação Vila Sônia",

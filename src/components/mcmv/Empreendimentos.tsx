@@ -20,6 +20,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
         width={1024}
         height={768}
         loading="lazy"
+        decoding="async"
         onClick={() => abrir(0)}
         className="h-55 w-full cursor-pointer object-cover"
       />
@@ -29,7 +30,10 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
             key={f + i}
             src={f}
             alt={`${emp.nome} - foto ${i + 2}`}
+            width={104}
+            height={104}
             loading="lazy"
+            decoding="async"
             onClick={() => abrir(i + 1)}
             className="size-13 shrink-0 cursor-pointer rounded-lg border-2 border-transparent object-cover hover:border-primary"
           />
@@ -256,6 +260,8 @@ export function Empreendimentos() {
                 key={f + i}
                 src={f}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 onClick={() => setBook({ ...book, foto: i })}
                 className={`size-15 shrink-0 cursor-pointer rounded-lg border-2 object-cover ${
                   i === book.foto ? "border-primary opacity-100" : "border-transparent opacity-55"
