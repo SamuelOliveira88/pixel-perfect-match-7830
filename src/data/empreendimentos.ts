@@ -68,17 +68,8 @@ const fotosJoaoDias = [jd3.url, jd4.url, jd5.url, jd2.url, jd1.url];
 const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
 const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
-const bookPaesMods = import.meta.glob<{ default: { url: string } }>(
-  "../assets/bookpb/*.asset.json",
-  { eager: true },
-);
-const fotosPaesDeBarros = urlsFromGlob(bookPaesMods);
+const drive = (ids: string[]) => ids.map((id) => `https://lh3.googleusercontent.com/d/${id}`);
 
-const bookBelenzinhoMods = import.meta.glob<{ default: { url: string } }>(
-  "../assets/bookbz/*.asset.json",
-  { eager: true },
-);
-const fotosBelenzinho = urlsFromGlob(bookBelenzinhoMods);
 
 export const ZONAS = ["Zona Norte", "Zona Sul", "Zona Leste", "Zona Oeste"] as const;
 export type Zona = (typeof ZONAS)[number];
@@ -179,24 +170,109 @@ export const empreendimentos: Empreendimento[] = [
     nome: "Vibra Paes de Barros",
     zona: "Zona Leste",
     itens: [
-      "No coração da Mooca, na Av. Paes de Barros",
+      "Vila Formosa, zona leste de São Paulo",
       "1 e 2 quartos, de 26m² a 44m², com varanda",
-      "A 7 min da Estação Vila Prudente",
-      "Piscina, academia, salão de festas e minimercado",
-      "Unidades HIS: ITBI e Registro grátis",
+      "Piscina, academia e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
     ],
-    fotos: fotosPaesDeBarros,
+    fotos: drive([
+      "1LpkbZKlGipc_t7sNqmsc63gUQtWWwYs0",
+      "1y6z_WYFRGqHkQdyMhoEzfWeNV2Z0YW6x",
+      "1b4mBAVFzgmVEGF0oti-1GOr98myr5EVs",
+      "1QlPlhQYtBrvUZGmvzJpg_yekrqrL1nRa",
+      "1oYy_13pwZ9HBR6Mnm5n1DxGGxQxCvqET",
+    ]),
   },
   {
     nome: "Vibra Belenzinho",
     zona: "Zona Leste",
     itens: [
       "No Belenzinho, zona leste de São Paulo",
-      "1 e 2 quartos, com opção de varanda",
-      "Perto de metrô, comércio e serviços",
-      "Piscina, academia, salão de festas e coworking",
-      "Condomínio fechado com segurança",
+      "1 e 2 quartos, opção de 2 dorms com 45m²",
+      "Piscina, academia e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
     ],
-    fotos: fotosBelenzinho,
+    fotos: drive([
+      "1Orob85GGLtJJXjjcj2spcStlTYp-6oY0",
+      "1oTZAirc3FgJ9ZwtGdf09P1NI6sq8z4qP",
+      "1Uy_9BcYf749PqljQHOZpisDgxuGTLk-3",
+      "1tYDXN9W6NKtMvE28INByT3LtqFHgoKnA",
+      "1GLN3pZyRA4H-ELsuu2-hKzUg_vqLewbk",
+    ]),
+  },
+  {
+    nome: "Vibra Mooca",
+    zona: "Zona Leste",
+    itens: [
+      "No bairro da Mooca, zona leste de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, fitness e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "1LCi7NusBdEqRTMY-qkSIYnmBsmQhdpPz",
+      "1MLvdXFoV2lsiEZnXzGGsauJsvILpzxDJ",
+      "1hy6H_Gxpz1-IiTNqP_CD9ro5FJT8zAcy",
+      "136D4neHNLHkuLdAKQ7ReS_9uuOwpGlQr",
+      "1UIo7PkfNLD5GKL3fEL6Z3tsijLVM3b9S",
+    ]),
+  },
+  {
+    nome: "Vibra Conselheiro Carrão",
+    zona: "Zona Leste",
+    itens: [
+      "Vila Carrão, zona leste de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, fitness e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "1A3vJl_MDTrMFhjfaPnBNiprjckIFdgec",
+      "19bqNrdoDDiMCz4rUgw_y_QBW6PMFrdO5",
+      "17mDGg7eNWRvyOqgqDUJf5zhB-EfO8pRc",
+      "1Og0i6zLdWt1pEV1QHii4VRPOyuEHfqQ6",
+      "1d1js7aHORl9oKyrUZYlx6C1ctRYJAb8G",
+    ]),
+  },
+  {
+    nome: "Vibra Parque Vila Prudente",
+    zona: "Zona Leste",
+    itens: [
+      "Vila Prudente, zona leste de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, academia e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "1DOO8vYXX7QfKrHk5jId6u_MxodyqkRhz",
+      "1rUt6F9zN9YfD5wB35RWlVammsBV64mKE",
+      "1EoMDEy9RXNs4Psu-KDd9eZUhf-DjWn5n",
+      "10QW0IRZnqEKISvWDQr2THbTHx3PqcMjL",
+      "1VTRmtRRPf56Uvq71wN8iY8ickGh0wBsU",
+    ]),
+  },
+  {
+    nome: "Vibra Estação Vila Prudente",
+    zona: "Zona Leste",
+    itens: [
+      "Vila Prudente, pertinho do metrô",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, fitness e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "1_Vd0qKmaW05yAQ1J9TrIuCGqjy9gIUTd",
+      "1914JcATEBQF9i-jPjMgOf4e-wQ2KJYub",
+      "1aECuB01GvkC8saTwfPTvlo2i03n9vBQR",
+      "1yaua8F18_eGwrKBM9Dl1NzC-wxekYPiO",
+      "1g8pAwN6BxKNKPVLU--LAcT7dzpYE0Fcl",
+    ]),
   },
 ];
+

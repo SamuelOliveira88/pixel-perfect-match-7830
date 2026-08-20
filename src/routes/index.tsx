@@ -94,8 +94,19 @@ function Index() {
             loop
             playsInline
             preload="metadata"
+            onLoadedMetadata={(e) => {
+              const v = e.currentTarget;
+              v.muted = true;
+              void v.play().catch(() => {});
+            }}
+            onCanPlay={(e) => {
+              const v = e.currentTarget;
+              v.muted = true;
+              void v.play().catch(() => {});
+            }}
             className="max-h-[60vh] min-h-[320px] w-full bg-black object-cover"
           />
+
         </div>
         <div className="mx-auto mt-4 max-w-[1100px] px-5 text-center text-sm text-primary-foreground/80">
           Veja o empreendimento e agende sua visita
