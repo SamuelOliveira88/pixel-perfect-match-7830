@@ -189,7 +189,31 @@ export const empreendimentos: Empreendimento[] = [
       "Churrasqueira, salão de festas, salão de jogos e sport bar",
       "Academia, brinquedoteca, playground e pet care",
     ],
-    fotos: fotosEstacaoVilaSonia,
+    fotos: drive([
+      "1Gx0ko_lrcFPHsoTxQaOF_P3rI2sZhl7R",
+      "1XelJXtE75Ete627ozmWXHaaOE7Q7o7EK",
+      "1Oso49XoNm9t5b8DFYutVhWl9GMy5_diX",
+      "1Gc0UCK_C8lRZa9ZE8MqBhi90Sk148p-E",
+      "1wibV7E757Hdjd_420LAjjjmajArsQMXr",
+    ]),
+  },
+  {
+    nome: "Vibra Vista Butantã",
+    zona: "Zona Oeste",
+    itens: [
+      "Bairro Butantã, Zona Oeste de São Paulo",
+      "1 e 2 quartos, com opção de varanda",
+      "Piscina, espaço fitness e salão de festas",
+      "Renda até R$ 8 mil e subsídio de até R$ 55.000",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: drive([
+      "135_DOacO0PoVcZI5RCg5KDowyZHb2HgT",
+      "182XIDUGw9eUhxPz4ikGQLXYZjQ_--QeQ",
+      "1FrbU04BybmSEWIL-5QqoeopfpCIUlvST",
+      "1VUaSicvCK_2RsTMIEeSwnodoS-XM4ptw",
+      "16m79k2ebw4Pm_04_98q_JG2_xf0K5kYm",
+    ]),
   },
   {
     nome: "Vibra Estação Giovanni",
