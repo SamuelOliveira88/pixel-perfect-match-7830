@@ -260,6 +260,8 @@ export function Empreendimentos() {
                 key={f + i}
                 src={f}
                 alt=""
+                loading="lazy"
+                decoding="async"
                 onClick={() => setBook({ ...book, foto: i })}
                 className={`size-15 shrink-0 cursor-pointer rounded-lg border-2 object-cover ${
                   i === book.foto ? "border-primary opacity-100" : "border-transparent opacity-55"
