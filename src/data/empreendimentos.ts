@@ -147,7 +147,13 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia e mais",
       "Condomínio fechado com segurança",
     ],
-    fotos: fotosCidadeUniv,
+    fotos: drive([
+      "1CZON3e50yHiI2ZnKBmcyMi0SrSOkJPAM",
+      "1Gc21FCmNUiK16mju6hlVUsEpeF_6OSZl",
+      "1ZXvY94wvds2EzW_zl6-2GazBKnziDjWv",
+      "1RQmWEqiCJZ1eDoiNEh6Aid7mgZPylt0-",
+      "1cfk3S2IovzfomLHGCXT8Kv81k6-kRG_X",
+    ]),
   },
   {
     nome: "Vibra Parque Vila Sônia",
