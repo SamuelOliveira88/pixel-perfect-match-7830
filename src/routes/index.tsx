@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Empreendimentos } from "@/components/mcmv/Empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
 import { Simulador } from "@/components/mcmv/Simulador";
+import { SiteHeader } from "@/components/mcmv/SiteHeader";
+import { SiteFooter } from "@/components/mcmv/SiteFooter";
 import { zap } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 import fachada from "@/assets/emp-fachada.jpg";
@@ -60,29 +62,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="sticky top-0 z-50 bg-card shadow-[0_2px_10px_rgba(0,0,0,.06)]">
-        <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-between gap-5 px-5 py-3.5">
-          <span className="text-xl leading-tight font-extrabold tracking-tight text-primary">
-            Villar
-            <span className="block text-xs font-semibold tracking-[0.25em] text-accent-dark">IMÓVEIS</span>
-          </span>
-          <div className="min-w-[220px] flex-1 text-center text-xl font-extrabold leading-snug text-primary md:text-2xl">
-            O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
-          </div>
-          <a href="#simulador" className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark">
-            SIMULAR AGORA
-          </a>
-          <a
-            href={linkZap}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={onClickWhatsApp(linkZap, "Header - SIMULAÇÃO GRATUITA")}
-            className="btn-base bg-primary text-primary-foreground hover:bg-primary-dark"
-          >
-            SIMULAÇÃO GRATUITA
-          </a>
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="bg-gradient-to-br from-primary to-primary-dark py-6 pb-8">
         <div className="mx-auto max-w-[1100px] px-5">
@@ -237,79 +217,7 @@ function Index() {
         </div>
       </section>
 
-      <footer className="bg-primary-dark py-12 pb-6 text-primary-foreground">
-        <div className="mx-auto max-w-[1100px] px-5">
-          <div className="mb-7 grid gap-7 sm:grid-cols-3">
-            <div>
-              <h3 className="mb-3.5 font-bold">Endereço</h3>
-              <p className="text-sm opacity-85">
-                Estrada São Francisco, 2008
-                <br />
-                São Paulo – SP
-              </p>
-            </div>
-            <div>
-              <h3 className="mb-3.5 font-bold">Contato</h3>
-              <p className="text-sm opacity-85">
-                📞{" "}
-                <a href="tel:+5511999922344" className="hover:underline">
-                  (11) 9.9992-2344
-                </a>
-              </p>
-              <p className="text-sm opacity-85">
-                💬{" "}
-                <a
-                  href={zap("Olá, vim pelo site MCMV e gostaria de mais informações.")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={onClickWhatsApp(
-                    zap("Olá, vim pelo site MCMV e gostaria de mais informações."),
-                    "Rodapé - WhatsApp",
-                  )}
-                  className="hover:underline"
-                >
-                  (11) 9.9992-2344
-                </a>
-              </p>
-              <p className="text-sm opacity-85">CRECI 189.434-F 42581-J</p>
-            </div>
-            <div>
-              <h3 className="mb-3.5 font-bold">Conheça minhas redes</h3>
-              <div className="flex gap-3">
-                <a
-                  href="https://www.facebook.com/villarcorretoradeimoveis"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Facebook"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    abrirLink("https://www.facebook.com/villarcorretoradeimoveis");
-                  }}
-                  className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
-                >
-                  f
-                </a>
-                <a
-                  href="https://www.instagram.com/simonevillarimob/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    abrirLink("https://www.instagram.com/simonevillarimob/");
-                  }}
-                  className="flex size-10 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground transition-colors hover:bg-primary-dark"
-                >
-                  ◎
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="border-t border-primary-foreground/15 pt-5 text-center text-xs opacity-75">
-            © 2026 Villar Imóveis — Todos os direitos reservados.
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <a
         href={linkZap}
