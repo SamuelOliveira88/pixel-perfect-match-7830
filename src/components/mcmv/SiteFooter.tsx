@@ -36,12 +36,6 @@ export function SiteFooter() {
                 WhatsApp (11) 9.9992-2344
               </a>
             </p>
-            <p className="text-sm opacity-85">
-              ✉️{" "}
-              <a href="mailto:contato@vibramcmv.com" className="hover:underline">
-                contato@vibramcmv.com
-              </a>
-            </p>
             <p className="mt-3 text-sm opacity-85">
               Estrada São Francisco, 2008 — São Paulo/SP
             </p>
