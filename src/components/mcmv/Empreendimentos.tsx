@@ -65,9 +65,9 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
           className="btn-base w-full bg-primary text-primary-foreground hover:bg-primary-dark"
           target="_blank"
           rel="noopener noreferrer"
-          href={zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`)}
+          href={zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${nomeExibicao(emp.nome)}.`)}
           onClick={onClickWhatsApp(
-            zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`),
+            zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${nomeExibicao(emp.nome)}.`),
             `SIMULAÇÃO GRÁTIS - ${emp.nome}`,
           )}
         >

@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import { Link } from "@tanstack/react-router";
 
 const campo =
   "w-full rounded-[10px] border border-[#40507a] bg-[#27385f] px-4 py-3.5 text-base text-[#eef2fb] outline-none placeholder:text-[#7e8aaa] focus:border-accent focus:ring-3 focus:ring-accent/25";
@@ -13,12 +14,17 @@ export function FormSimulacao() {
   const [renda, setRenda] = useState("");
   const [fgts, setFgts] = useState("");
   const [planta, setPlanta] = useState("");
+  const [consentimento, setConsentimento] = useState(false);
   const [enviando, setEnviando] = useState(false);
   const [enviado, setEnviado] = useState(false);
   const [erro, setErro] = useState("");
 
   async function enviarFormulario(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!consentimento) {
+      setErro("É necessário aceitar a Política de Privacidade para enviar seus dados.");
+      return;
+    }
     setEnviando(true);
     setErro("");
 
@@ -33,6 +39,8 @@ export function FormSimulacao() {
           renda_familiar: renda,
           fgts,
           planta_interesse: planta,
+          consentimento_lgpd: true,
+          consentimento_data: new Date().toISOString(),
         }),
       });
 
@@ -184,6 +192,23 @@ export function FormSimulacao() {
           </select>
         </div>
 
+        <label className="flex cursor-pointer items-start gap-3 text-sm leading-relaxed text-[#d5dbee]">
+          <input
+            type="checkbox"
+            required
+            checked={consentimento}
+            onChange={(e) => setConsentimento(e.target.checked)}
+            className="mt-0.5 size-5 shrink-0 accent-accent"
+          />
+          <span>
+            Li e concordo com a{" "}
+            <Link to="/politica-de-privacidade" className="font-semibold text-accent underline">
+              Política de Privacidade
+            </Link>{" "}
+            e autorizo o uso dos meus dados para contato sobre este e outros imóveis.
+          </span>
+        </label>
+
         {erro && (
           <p role="alert" className="text-sm font-medium text-[#ffc8b8]">
             {erro}
@@ -192,8 +217,8 @@ export function FormSimulacao() {
 
         <button
           type="submit"
-          disabled={enviando}
-          className="w-full rounded-[10px] bg-accent p-4 text-base font-bold text-accent-foreground transition-colors hover:bg-accent-dark disabled:cursor-wait disabled:opacity-70"
+          disabled={enviando || !consentimento}
+          className="w-full rounded-[10px] bg-accent p-4 text-base font-bold text-accent-foreground transition-colors hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60"
         >
           {enviando ? "Enviando..." : "Quero saber mais"}
         </button>
