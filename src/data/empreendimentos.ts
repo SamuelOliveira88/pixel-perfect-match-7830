@@ -12,7 +12,7 @@ import gio5 from "@/assets/emp/giovanni-5_1.jpg.asset.json";
 
 export const WHATSAPP = "5511999922344";
 
-export const zap = (texto: string) => `whatsapp://send?phone=${WHATSAPP}&text=${encodeURIComponent(texto)}`;
+export const zap = (texto: string) => `https://wa.me/${WHATSAPP}/?text=${encodeURIComponent(texto)}`;
 
 function urlsFromGlob(modules: Record<string, { default?: { url?: string } }>) {
   return Object.keys(modules)

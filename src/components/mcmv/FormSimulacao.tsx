@@ -30,6 +30,9 @@ export function FormSimulacao() {
           nome: nome.trim(),
           telefone: telefone.trim(),
           email: email.trim(),
+          renda_familiar: renda,
+          fgts,
+          planta_interesse: planta,
         }),
       });
 
