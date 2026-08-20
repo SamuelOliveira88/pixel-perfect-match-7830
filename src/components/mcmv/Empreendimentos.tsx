@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { empreendimentos, slugify, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
+import { empreendimentos, nomeExibicao, slugify, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 
@@ -18,7 +18,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
       )}
       <img
         src={emp.fotos[0]}
-        alt={emp.nome}
+        alt={nomeExibicao(emp.nome)}
         width={1024}
         height={768}
         loading="lazy"
@@ -31,7 +31,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
           <img
             key={f + i}
             src={f}
-            alt={`${emp.nome} - foto ${i + 2}`}
+            alt={`${nomeExibicao(emp.nome)} - foto ${i + 2}`}
             width={104}
             height={104}
             loading="lazy"
@@ -42,7 +42,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
         ))}
       </div>
       <div className="flex flex-1 flex-col px-5 pt-5 pb-6">
-        <h3 className="text-xl font-bold text-primary">{emp.nome}</h3>
+        <h3 className="text-xl font-bold text-primary">{nomeExibicao(emp.nome)}</h3>
         <div className="mb-1 font-extrabold text-accent-dark">Minha Casa Minha Vida · HIS</div>
         <div className="mb-3 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground/70">{emp.zona}</div>
         <ul className="mb-5 flex-1 space-y-1">
@@ -65,9 +65,9 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
           className="btn-base w-full bg-primary text-primary-foreground hover:bg-primary-dark"
           target="_blank"
           rel="noopener noreferrer"
-          href={zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`)}
+          href={zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${nomeExibicao(emp.nome)}.`)}
           onClick={onClickWhatsApp(
-            zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${emp.nome}.`),
+            zap(`Olá, visitei o site MCMV e quero fazer uma simulação do ${nomeExibicao(emp.nome)}.`),
             `SIMULAÇÃO GRÁTIS - ${emp.nome}`,
           )}
         >
@@ -223,7 +223,7 @@ export function Empreendimentos() {
           onClick={(e) => e.target === e.currentTarget && setBook(null)}
         >
           <div className="absolute top-0 right-0 left-0 z-2 flex items-center justify-between px-6 py-4 text-primary-foreground">
-            <span className="font-extrabold">{atual.nome}</span>
+            <span className="font-extrabold">{nomeExibicao(atual.nome)}</span>
             <span className="text-sm opacity-80">
               {book.foto + 1} / {atual.fotos.length}
             </span>
@@ -246,7 +246,7 @@ export function Empreendimentos() {
           </button>
           <img
             src={atual.fotos[book.foto]}
-            alt={`${atual.nome} - foto ${book.foto + 1}`}
+            alt={`${nomeExibicao(atual.nome)} - foto ${book.foto + 1}`}
             className="max-h-[70vh] max-w-[88vw] rounded-xl object-contain"
           />
           <button

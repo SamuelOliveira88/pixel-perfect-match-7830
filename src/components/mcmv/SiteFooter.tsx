@@ -80,7 +80,7 @@ export function SiteFooter() {
           <Link to="/sobre" className="opacity-85 hover:underline">
             Sobre Nós
           </Link>
-          <Link to="/privacidade" className="opacity-85 hover:underline">
+          <Link to="/politica-de-privacidade" className="opacity-85 hover:underline">
             Política de Privacidade
           </Link>
           <Link to="/termos" className="opacity-85 hover:underline">
