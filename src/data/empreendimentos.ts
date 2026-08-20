@@ -36,10 +36,7 @@ const fotosBonfiglioli = [
   bonf4.url,
   bonf5.url,
 ];
-const fotosCidadeUniv = [univ5.url, univ4.url, univ2.url, univ3.url, univ1.url];
 const fotosGiovanni = [gio3.url, gio4.url, gio5.url, gio2.url, gio1.url];
-const fotosParqueVilaSonia = [vs2.url, vs3.url, vs4.url, vs5.url, vs1.url];
-const fotosEstacaoVilaSonia = [ev3.url, ev4.url, ev5.url, ev2.url, ev1.url];
 
 const drive = (ids: string[]) => ids.map((id) => `https://lh3.googleusercontent.com/d/${id}`);
 
