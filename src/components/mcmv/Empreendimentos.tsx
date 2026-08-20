@@ -51,13 +51,14 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
             </li>
           ))}
         </ul>
-        <button
-          type="button"
-          onClick={() => abrir(0)}
+        <a
           className="btn-base mb-2.5 w-full border-2 border-primary bg-card text-primary hover:bg-primary hover:text-primary-foreground"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={emp.bookUrl}
         >
           📖 VER BOOK COMPLETO
-        </button>
+        </a>
         <a
           className="btn-base w-full bg-primary text-primary-foreground hover:bg-primary-dark"
           target="_blank"
