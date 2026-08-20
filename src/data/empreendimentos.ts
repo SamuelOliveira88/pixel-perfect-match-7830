@@ -183,7 +183,13 @@ export const empreendimentos: Empreendimento[] = [
       "Piscina, academia, coworking, espaço beleza e pet place",
       "Perto da Av. Giovanni Gronchi e Marginal Pinheiros",
     ],
-    fotos: fotosJoaoDias,
+    fotos: drive([
+      "1M42_liHFkAVRbcPqkM__caGpRpA1LzER",
+      "13bVgUKdIe1JC-L2Wm1MMXC64FoCT5TLl",
+      "1_p-uu8bmEm_8IbSMXagc6kRkorUJJdY-",
+      "15V-F7cGtpTkMCKiuH6zbZKfQjONeSmep",
+      "1SifrNaCiTlCF0Tuc4GLFRyP9XZLo3l-G",
+    ]),
   },
   {
     nome: "Vibra Estação Vila Sônia",
