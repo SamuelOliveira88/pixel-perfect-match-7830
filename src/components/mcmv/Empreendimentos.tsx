@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
-import { empreendimentos, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
+import { Link } from "@tanstack/react-router";
+import { empreendimentos, slugify, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
+
 
 function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => void }) {
   return (
