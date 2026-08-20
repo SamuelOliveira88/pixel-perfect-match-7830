@@ -83,7 +83,7 @@ const fotosBelenzinho = urlsFromGlob(bookBelenzinhoMods);
 export type Empreendimento = {
   nome: string;
   destaque?: boolean;
-  zona: "Zona Sul" | "Zona Oeste" | "Zona Leste";
+  zona: Zona;
   itens: string[];
   fotos: string[];
 };
