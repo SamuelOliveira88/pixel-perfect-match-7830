@@ -44,6 +44,8 @@
   --color-primary-dark: var(--primary-dark);
   --color-brand-blue: var(--brand-blue);
   --color-brand-blue-dark: var(--brand-blue-dark);
+  --color-cyan-accent: var(--cyan-accent);
+  --color-cyan-accent-soft: var(--cyan-accent-soft);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-dark: var(--whatsapp-dark);
   --color-destructive: var(--destructive);
