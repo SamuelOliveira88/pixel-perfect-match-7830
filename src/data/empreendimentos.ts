@@ -347,3 +347,16 @@ export const empreendimentos: Empreendimento[] = [
     bookUrl: "https://vibraresidencial.com.br/produtos/vibra-estacao-vila-prudente-2/",
   },
 ];
+
+export function slugify(nome: string) {
+  return nome
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+export function getEmpreendimentoPorSlug(slug: string) {
+  return empreendimentos.find((e) => slugify(e.nome) === slug);
+}
