@@ -45,16 +45,6 @@ const beneficios = [
   "Subsídio do governo de acordo com sua faixa de renda",
 ];
 
-function abrirLink(url: string) {
-  const w = window.open(url, "_blank", "noopener,noreferrer");
-  if (!w) {
-    try {
-      (window.top ?? window).location.href = url;
-    } catch {
-      window.location.href = url;
-    }
-  }
-}
 
 function Index() {
   const msgZap = "Olá, visitei o site MCMV e quero fazer uma simulação grátis.";
