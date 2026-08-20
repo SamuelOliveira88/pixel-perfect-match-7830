@@ -360,3 +360,8 @@ export function slugify(nome: string) {
 export function getEmpreendimentoPorSlug(slug: string) {
   return empreendimentos.find((e) => slugify(e.nome) === slug);
 }
+
+/** Nome exibido ao visitante, sem o prefixo da incorporadora. */
+export function nomeExibicao(nome: string) {
+  return nome.replace(/^Vibra\s+/i, "");
+}
