@@ -159,7 +159,13 @@ export const empreendimentos: Empreendimento[] = [
       "Mais de 10 espaços de lazer",
       "Condomínio fechado, portaria com clausura",
     ],
-    fotos: fotosParqueVilaSonia,
+    fotos: drive([
+      "1k-dbU7hkw1LQfi79qkd5inDSUWw1pm53",
+      "1UiHbEVsnRQpLNv6CYwBS5dsE4UNpRzvn",
+      "1v-db6U7xRF0leQqf76EzhwGme1Q81uub",
+      "10A-cDzoHTo9qvVyipt1RXP8HMqKyXyBL",
+      "1NhsUOqdQeKkAg9khGcpYdoFu59IW44S_",
+    ]),
   },
   {
     nome: "Vibra João Dias",
