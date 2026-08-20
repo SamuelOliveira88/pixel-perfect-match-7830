@@ -56,43 +56,49 @@ function Index() {
 
       <section id="destaque" className="bg-gradient-to-br from-primary to-primary-dark py-10">
         <div className="mx-auto max-w-[1100px] px-5">
-          <h2 className="mb-1 text-center text-2xl leading-snug font-extrabold text-primary-foreground md:text-3xl">
-            O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
-          </h2>
-          <p className="mb-6 text-center text-sm text-primary-foreground/80">
-            Lançamento em destaque desta semana
-          </p>
-          <div
-            className="mx-auto max-w-[900px] rounded-[24px] border-[3px] border-cyan-accent bg-card p-4 pb-5"
-            style={{
-              boxShadow:
-                "0 0 0 6px color-mix(in oklch, var(--cyan-accent) 18%, transparent), 0 22px 60px -12px color-mix(in oklch, var(--cyan-accent) 55%, transparent)",
-            }}
-          >
-            <div className="mb-3.5 flex flex-wrap items-center justify-center gap-2.5 text-center font-extrabold text-primary">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-accent px-3.5 py-1 text-xs font-extrabold tracking-wide text-accent-dark uppercase">
-                ▶ Vídeo em destaque
-              </span>
-              <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
-                🔥 Lançamento
-              </span>
-              Conheça o Vibra Jardim Bonfiglioli
-            </div>
-            <video
-              src={videoBonfiglioli.url}
-              poster={fachada}
-              controls
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="metadata"
-              className="max-h-[520px] w-full rounded-xl border-2 border-cyan-accent/60 bg-black object-cover"
-            />
-            <div className="mt-3 text-center text-sm text-muted-foreground">
-              Veja o empreendimento e agende sua visita
-            </div>
+          <div className="mb-6 text-center">
+            <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-1.5 text-xs font-extrabold tracking-[0.2em] text-primary-foreground uppercase backdrop-blur-sm">
+              <span className="inline-block size-2 rounded-full bg-cyan-accent" />
+              Villar Imóveis
+            </span>
+            <h2 className="mt-3 text-2xl leading-snug font-extrabold text-primary-foreground md:text-4xl">
+              O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
+            </h2>
           </div>
+        </div>
+        <p className="mb-6 text-center text-sm text-primary-foreground/80">
+          Lançamento em destaque desta semana
+        </p>
+        <div
+          className="w-full border-y-[3px] border-cyan-accent bg-card"
+          style={{
+            boxShadow:
+              "0 0 0 6px color-mix(in oklch, var(--cyan-accent) 18%, transparent), 0 22px 60px -12px color-mix(in oklch, var(--cyan-accent) 55%, transparent)",
+          }}
+        >
+          <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-2.5 px-5 py-3 text-center font-extrabold text-primary">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-accent px-3.5 py-1 text-xs font-extrabold tracking-wide text-accent-dark uppercase">
+              ▶ Vídeo em destaque
+            </span>
+            <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
+              🔥 Lançamento
+            </span>
+            Conheça o Vibra Jardim Bonfiglioli
+          </div>
+          <video
+            src={videoBonfiglioli.url}
+            poster={fachada}
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="max-h-[60vh] min-h-[320px] w-full bg-black object-cover"
+          />
+        </div>
+        <div className="mx-auto mt-4 max-w-[1100px] px-5 text-center text-sm text-primary-foreground/80">
+          Veja o empreendimento e agende sua visita
         </div>
       </section>
 
