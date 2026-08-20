@@ -44,7 +44,21 @@ const drive = (ids: string[]) => ids.map((id) => `https://lh3.googleusercontent.
 export const ZONAS = ["Zona Norte", "Zona Sul", "Zona Leste", "Zona Oeste"] as const;
 export type Zona = (typeof ZONAS)[number];
 
-export type Empreendimento = {
+export type FichaTecnica = {
+  endereco?: string;
+  statusObra?: string;
+  torres?: number;
+  unidadesTotais?: number;
+  tipologiasMetragens?: string;
+  precoAPartirDe?: string;
+  faixasMCMV?: string;
+  vagasGaragem?: string;
+  transporte?: string;
+  tourVirtualUrl?: string;
+  lazerCompleto?: string[];
+};
+
+export type Empreendimento = FichaTecnica & {
   nome: string;
   destaque?: boolean;
   zona: Zona;
@@ -52,6 +66,7 @@ export type Empreendimento = {
   fotos: string[];
   bookUrl: string;
 };
+
 
 export const empreendimentos: Empreendimento[] = [
   {
@@ -347,6 +362,154 @@ export const empreendimentos: Empreendimento[] = [
     bookUrl: "https://vibraresidencial.com.br/produtos/vibra-estacao-vila-prudente-2/",
   },
 ];
+
+/** Ficha técnica por empreendimento (dados públicos das fontes oficiais). */
+const fichas: Record<string, FichaTecnica> = {
+  "Vibra Estação Giovanni": {
+    endereco: "Rua Manuel de Oliveira Falcão, 44 — Vila Nova das Belezas, Zona Sul, São Paulo",
+    statusObra: "Em obras — 20% concluído",
+    torres: 1,
+    unidadesTotais: 363,
+    tipologiasMetragens: "1 dorm. 26m² | 2 dorm. 34/37/39/42m²",
+    precoAPartirDe: "R$ 239.900",
+    faixasMCMV: "HIS2: 262 unidades (R$ 249.900 a R$ 383.636,74) | R2V: 84 unidades",
+    vagasGaragem: "Sem vaga de garagem",
+    transporte: "8 min a pé da Estação João Dias (Linha 5-Lilás)",
+    tourVirtualUrl: "https://vibraresidencial.com.br/tourvirtual/vibra-estacao-giovanni/index.html",
+    lazerCompleto: [
+      "Piscina", "Academia", "Salão de Jogos", "Espaço de Beleza", "Salão de Festas",
+      "Playground", "Mini Mercado", "Pet Care", "Brinquedoteca", "Churrasqueira",
+      "Espaço Delivery", "Solário", "Portaria", "Wi-Fi nas áreas comuns", "Segurança com cerca elétrica",
+    ],
+  },
+  "Vibra Sabará": {
+    endereco: "Rua Quararibéia, 223 — Vila Isa, Zona Sul, São Paulo",
+    statusObra: "Lançamento",
+    torres: 3,
+    unidadesTotais: 515,
+    tipologiasMetragens: "2 dorm. 37/38/40m²",
+    precoAPartirDe: "R$ 274.900",
+    faixasMCMV: "HIS2: 252 unidades (R$ 289.900 a R$ 383.636,74) | R2V: 91 unidades",
+    vagasGaragem: "Sem vaga de garagem",
+    transporte: "10 min de carro até a Estação Jurubatuba (Linha 5-Lilás); 2,5 km do Shopping Interlagos",
+    lazerCompleto: [
+      "Espaço Delivery", "Mini Mercado", "Espaço de Beleza", "Salão de Festas", "Salão de Jogos",
+      "Pet Care", "Brinquedoteca", "Coworking", "Espaço Gourmet", "Bicicletário", "Piscina Adulto",
+      "Piscina Infantil", "Solário", "Pet Place", "Playground", "Churrasqueira", "Academia",
+    ],
+  },
+  "Vibra Rio Bonito": {
+    endereco: "Rua Olívia Guedes Penteado, 1184 — Vila Sofia, Zona Sul, São Paulo",
+    statusObra: "Lançamento",
+    torres: 1,
+    unidadesTotais: 450,
+    tipologiasMetragens: "2 dorm. 34/37/41m²",
+    precoAPartirDe: "R$ 286.900",
+    faixasMCMV:
+      "HIS1: 20 unidades (até R$ 276.102,20) | HIS2: 355 unidades (até R$ 383.636,74) | R2V: 75 unidades",
+    vagasGaragem: "62 vagas no total, não vinculadas por unidade",
+    transporte: "6 min da Estação Socorro (Linha 5-Lilás)",
+    lazerCompleto: [
+      "Portaria com Delivery", "Mini Mercado", "Espaço de Beleza", "Brinquedoteca", "Espaço Gourmet",
+      "Coworking", "Salão de Festas", "Salão de Jogos", "Pet Place", "Playground", "Churrasqueira",
+      "Solário", "Piscina Adulto", "Piscina Infantil", "Espaço Piquenique", "Pet Care", "Academia", "Bicicletário",
+    ],
+  },
+  "Vibra João Dias": {
+    endereco: "Rua Amâncio Klein, 28 — Vila das Belezas, Zona Sul, São Paulo",
+    statusObra: "Em obras — 55% concluído",
+    torres: 1,
+    unidadesTotais: 358,
+    tipologiasMetragens: "1 dorm. 26m² | 2 dorm. 34/37/41m²",
+    precoAPartirDe: "R$ 289.900",
+    faixasMCMV: "HIS2: 252 unidades | R2V: 106 unidades",
+    vagasGaragem: "Sem vaga de garagem",
+    transporte: "4 min da Estação Giovanni Gronchi (Linha 5-Lilás)",
+    tourVirtualUrl: "https://app-vibra-residencial-prod-01.azurewebsites.net/tourvirtual/vibra-joao-dias/",
+    lazerCompleto: [
+      "Academia", "Brinquedoteca", "Playground", "Churrasqueira", "Piscina Adulto", "Mini Mercado",
+      "Salão de Festas", "Salão de Jogos", "Pet Place", "Bicicletário", "Mini Quadra", "Coworking",
+      "Espaço de Beleza", "Pet Care", "Piscina Infantil", "Solário", "Espaço Delivery", "Espaço Gourmet",
+    ],
+  },
+  "Vibra Estação Campo Limpo": {
+    endereco: "Estrada de Itapecerica, 2367 — Campo Limpo, Zona Sul, São Paulo",
+    statusObra: "Em obras — 9% concluído",
+    torres: 4,
+    unidadesTotais: 482,
+    tipologiasMetragens: "1 e 2 dorm. 27/37/39/42m², todas com varanda",
+    precoAPartirDe: "R$ 299.900",
+    faixasMCMV: "HIS2: 335 unidades (até R$ 383.636,74) | R2V: 119 unidades",
+    vagasGaragem: "Sem vaga de garagem",
+    transporte: "7 min da Estação Campo Limpo (Linha 5-Lilás)",
+    tourVirtualUrl:
+      "https://app-vibra-residencial-prod-01.azurewebsites.net/tours/estacao-campo-limpo/index.html",
+    lazerCompleto: [
+      "Piscina Adulto", "Salão de Festas", "Salão de Jogos", "Salão Gourmet", "Brinquedoteca",
+      "Playground", "Coworking", "Mini Mercado", "Espaço de Beleza", "Academia", "Pet Care",
+      "Pet Place", "Espaço Luau", "Rooftop", "Espaço Delivery", "Churrasqueira", "Solário",
+      "Bicicletário", "Praça",
+    ],
+  },
+  "Vibra Paes de Barros": {
+    endereco: "Avenida Paes de Barros, 2241 — Alto da Mooca, Zona Leste, São Paulo",
+    statusObra: "Comercialização iniciada em agosto/2026",
+    torres: 2,
+    unidadesTotais: 398,
+    tipologiasMetragens: "1 dorm. 26,45m² | 2 dorm. 36,71 a 44,15m², todas com varanda",
+    precoAPartirDe: "R$ 239.900",
+    faixasMCMV: "HIS2: 304 unidades (até R$ 383.636,74) | R2V: 94 unidades",
+    vagasGaragem: "Sem vaga de garagem",
+    transporte: "9 min da Estação Juventus-Mooca (Linha Turquesa)",
+    lazerCompleto: [
+      "Academia", "Bicicletário", "Churrasqueira", "Coworking", "Espaço Gourmet", "Espaço Luau",
+      "Piscina Adulto", "Playground", "Salão de Festas", "Salão de Jogos", "Brinquedoteca", "Minimercado",
+    ],
+  },
+  "Vibra Belenzinho": {
+    endereco: "Rua Professor Rodolfo São Tiago, 200 — Belenzinho, Zona Leste, São Paulo",
+    statusObra: "Breve lançamento — comercialização a partir de julho/2026",
+    torres: 2,
+    unidadesTotais: 463,
+    tipologiasMetragens: "1 dorm. 27m² | 2 dorm. 37/38/42/43/45m², todas com varanda",
+    precoAPartirDe: "R$ 239.900",
+    faixasMCMV:
+      "HIS2: 358 unidades (até R$ 383.636,74) | R2V: 105 unidades — ITBI e registro gratuitos nas unidades HIS",
+    vagasGaragem: "Sem vaga de garagem",
+    transporte: "6 min a pé (550 m) da Estação Belém",
+    lazerCompleto: [
+      "Academia", "Espaço de Beleza", "Brinquedoteca", "Pet Care", "Pet Place", "Playground",
+      "Mini Mercado", "Salão de Festas", "Salão de Jogos", "Piscina Adulto", "Espaço Delivery",
+      "Churrasqueira", "Solário", "Bicicletário", "Espaço Gourmet/Coworking",
+    ],
+  },
+  "Vibra Mooca": {
+    endereco: "Rua Taquari, 1049 — Mooca, Zona Leste, São Paulo",
+    statusObra: "Comercialização iniciada em fevereiro/2026 — 9% concluído",
+    torres: 1,
+    unidadesTotais: 654,
+    tipologiasMetragens: "1 dorm. 26m² | 2 dorm. 37/43/44m²",
+    precoAPartirDe: "R$ 294.900",
+    faixasMCMV:
+      "HIS2: 292 unidades (R$ 308.400 a R$ 383.636,74) | HMP: 116 unidades (R$ 321.900 a R$ 537.672,71) | R2V: 246 unidades",
+    vagasGaragem: "224 vagas no total no empreendimento",
+    transporte: "9 min de carro da Estação Juventus-Mooca; 11 min a pé da Estação Belém",
+    tourVirtualUrl:
+      "https://app-vibra-residencial-prod-01.azurewebsites.net/tourvirtual/vibra-mooca/index.html",
+    lazerCompleto: [
+      "Espaço Delivery", "Mini Mercado", "Pet Place", "Salão de Festas", "Sport Bar", "Salão de Jogos",
+      "Espaço Gourmet", "Brinquedoteca", "Churrasqueira", "Playground", "Mini Quadra", "Piscina Adulto",
+      "Piscina Infantil", "Solário", "Academia",
+    ],
+  },
+};
+
+for (const emp of empreendimentos) {
+  const ficha = fichas[emp.nome];
+  if (ficha) Object.assign(emp, ficha);
+}
+
+
 
 export function slugify(nome: string) {
   return nome
