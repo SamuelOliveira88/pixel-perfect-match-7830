@@ -9,6 +9,7 @@ const fmt = (v: number) =>
 function Slider({
   label,
   valor,
+  value,
   min,
   max,
   step,
@@ -16,6 +17,7 @@ function Slider({
 }: {
   label: string;
   valor: string;
+  value: number;
   min: number;
   max: number;
   step: number;
@@ -31,6 +33,7 @@ function Slider({
         min={min}
         max={max}
         step={step}
+        value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-border accent-brand-blue"
         aria-label={label}
@@ -41,7 +44,7 @@ function Slider({
 
 export function Simulador() {
   const [imovel, setImovel] = useState(220000);
-  const [entrada, setEntrada] = useState(34200);
+  const [entrada, setEntrada] = useState(34000);
   const [fgts, setFgts] = useState(71000);
   const [taxa, setTaxa] = useState(8);
 
@@ -61,6 +64,7 @@ export function Simulador() {
         <Slider
           label="Valor do imóvel:"
           valor={fmt(imovel)}
+          value={imovel}
           min={100000}
           max={500000}
           step={5000}
@@ -69,6 +73,7 @@ export function Simulador() {
         <Slider
           label="Entrada:"
           valor={fmt(entradaAjustada)}
+          value={entradaAjustada}
           min={0}
           max={200000}
           step={500}
@@ -77,6 +82,7 @@ export function Simulador() {
         <Slider
           label="FGTS disponível:"
           valor={fmt(fgts)}
+          value={fgts}
           min={0}
           max={150000}
           step={500}
@@ -85,6 +91,7 @@ export function Simulador() {
         <Slider
           label="Taxa de juros estimada:"
           valor={`${taxa.toFixed(2)}% a.a.`}
+          value={taxa}
           min={6}
           max={12}
           step={0.1}
