@@ -64,6 +64,7 @@ export function Simulador() {
         <Slider
           label="Valor do imóvel:"
           valor={fmt(imovel)}
+          value={imovel}
           min={100000}
           max={500000}
           step={5000}
@@ -72,6 +73,7 @@ export function Simulador() {
         <Slider
           label="Entrada:"
           valor={fmt(entradaAjustada)}
+          value={entradaAjustada}
           min={0}
           max={200000}
           step={500}
@@ -80,6 +82,7 @@ export function Simulador() {
         <Slider
           label="FGTS disponível:"
           valor={fmt(fgts)}
+          value={fgts}
           min={0}
           max={150000}
           step={500}
@@ -88,6 +91,7 @@ export function Simulador() {
         <Slider
           label="Taxa de juros estimada:"
           valor={`${taxa.toFixed(2)}% a.a.`}
+          value={taxa}
           min={6}
           max={12}
           step={0.1}
