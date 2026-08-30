@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { getEmpreendimentoPorSlug, nomeExibicao, zap } from "@/data/empreendimentos";
 import { FormSimulacao } from "@/components/mcmv/FormSimulacao";
+import { SiteHeader } from "@/components/mcmv/SiteHeader";
+import { SiteFooter } from "@/components/mcmv/SiteFooter";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 export const Route = createFileRoute("/empreendimento/$slug")({
