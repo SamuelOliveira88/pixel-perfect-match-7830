@@ -9,6 +9,7 @@ const fmt = (v: number) =>
 function Slider({
   label,
   valor,
+  value,
   min,
   max,
   step,
@@ -16,6 +17,7 @@ function Slider({
 }: {
   label: string;
   valor: string;
+  value: number;
   min: number;
   max: number;
   step: number;
@@ -31,6 +33,7 @@ function Slider({
         min={min}
         max={max}
         step={step}
+        value={value}
         onChange={(e) => onChange(Number(e.target.value))}
         className="h-1.5 w-full cursor-pointer appearance-none rounded-full bg-border accent-brand-blue"
         aria-label={label}
