@@ -44,7 +44,7 @@ function Slider({
 
 export function Simulador() {
   const [imovel, setImovel] = useState(220000);
-  const [entrada, setEntrada] = useState(34200);
+  const [entrada, setEntrada] = useState(34000);
   const [fgts, setFgts] = useState(71000);
   const [taxa, setTaxa] = useState(8);
 
