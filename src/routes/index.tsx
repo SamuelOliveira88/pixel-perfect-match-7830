@@ -6,8 +6,6 @@ import { SiteHeader } from "@/components/mcmv/SiteHeader";
 import { SiteFooter } from "@/components/mcmv/SiteFooter";
 import { zap } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
-import fachada from "@/assets/emp-fachada.jpg";
-import videoBonfiglioli from "@/assets/jd-bonfiglioli.mp4.asset.json";
 import lazer from "@/assets/emp-lazer.jpg";
 import mcmvFamilia from "@/assets/mcmv-familia.jpg";
 import simone from "@/assets/simone.jpg";
@@ -66,51 +64,6 @@ function Index() {
             </h2>
           </div>
         </div>
-        <p className="mb-6 text-center text-sm text-primary-foreground/80">
-          Lançamento em destaque desta semana
-        </p>
-        <div
-          className="w-full border-y-[3px] border-cyan-accent bg-card"
-          style={{
-            boxShadow:
-              "0 0 0 6px color-mix(in oklch, var(--cyan-accent) 18%, transparent), 0 22px 60px -12px color-mix(in oklch, var(--cyan-accent) 55%, transparent)",
-          }}
-        >
-          <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-center gap-2.5 px-5 py-3 text-center font-extrabold text-primary">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-cyan-accent px-3.5 py-1 text-xs font-extrabold tracking-wide text-accent-dark uppercase">
-              ▶ Vídeo em destaque
-            </span>
-            <span className="rounded-full bg-accent px-3 py-1 text-xs font-extrabold text-accent-foreground">
-              🔥 Lançamento
-            </span>
-            Conheça o Jardim Bonfiglioli
-          </div>
-          <video
-            src={videoBonfiglioli.url}
-            poster={fachada}
-            controls
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onLoadedMetadata={(e) => {
-              const v = e.currentTarget;
-              v.muted = true;
-              void v.play().catch(() => {});
-            }}
-            onCanPlay={(e) => {
-              const v = e.currentTarget;
-              v.muted = true;
-              void v.play().catch(() => {});
-            }}
-            className="max-h-[60vh] min-h-[320px] w-full bg-black object-cover"
-          />
-
-        </div>
-        <div className="mx-auto mt-4 max-w-[1100px] px-5 text-center text-sm text-primary-foreground/80">
-          Veja o empreendimento e agende sua visita
-        </div>
       </section>
 
       <section id="simulacao" className="relative overflow-hidden bg-primary py-15 text-primary-foreground">
@@ -134,7 +87,10 @@ function Index() {
               ))}
             </div>
           </div>
-          <FormSimulacao />
+          <div>
+            <h2 className="mb-4 text-xl font-extrabold uppercase">Simule seu financiamento</h2>
+            <Simulador />
+          </div>
         </div>
       </section>
 
@@ -212,11 +168,11 @@ function Index() {
 
       <section id="simulador" className="bg-secondary py-16">
         <div className="mx-auto max-w-[1100px] px-5">
-          <h2 className="mb-2.5 text-center text-3xl font-extrabold text-primary">Simule seu financiamento</h2>
+          <h2 className="mb-2.5 text-center text-3xl font-extrabold text-primary">Simulação grátis</h2>
           <p className="mx-auto mb-10 max-w-xl text-center text-muted-foreground">
-            Arraste as barras e veja uma estimativa da sua parcela na hora
+            Preencha seus dados e receba uma análise do seu perfil sem compromisso
           </p>
-          <Simulador />
+          <FormSimulacao />
         </div>
       </section>
 
@@ -247,7 +203,7 @@ function Index() {
         rel="noopener noreferrer"
         onClick={onClickWhatsApp(linkZap, "Botão flutuante WhatsApp")}
         aria-label="Falar no WhatsApp"
-        className="animate-zap-pulse fixed right-6 bottom-6 z-100 flex size-15 items-center justify-center rounded-full bg-primary text-3xl text-primary-foreground"
+        className="animate-zap-pulse fixed right-6 bottom-6 z-100 flex size-15 items-center justify-center rounded-full bg-whatsapp text-3xl text-primary-foreground"
       >
         <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor" aria-hidden="true">
           <path d="M16.004 3C9.376 3 4 8.373 4 15c0 2.386.7 4.607 1.905 6.474L4 29l7.72-1.855A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm6.98 17.02c-.29.816-1.44 1.494-2.36 1.69-.63.133-1.454.24-4.227-.907-3.548-1.466-5.833-5.06-6.012-5.297-.176-.238-1.437-1.914-1.437-3.65s.912-2.59 1.235-2.946c.29-.32.63-.4.84-.4.21 0 .42.002.605.011.194.01.454-.073.71.542.264.635.897 2.19.976 2.35.079.16.132.348.026.56-.106.212-.16.344-.317.53-.158.185-.332.413-.475.556-.158.158-.322.33-.138.647.184.317.816 1.35 1.752 2.187 1.203 1.075 2.219 1.408 2.535 1.567.317.158.502.132.688-.08.185-.211.79-.92.999-1.236.211-.317.422-.264.712-.158.291.106 1.847.872 2.164 1.03.317.159.528.238.607.37.079.132.079.766-.211 1.581Z" />
