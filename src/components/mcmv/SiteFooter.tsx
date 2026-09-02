@@ -19,13 +19,11 @@ export function SiteFooter() {
             <p className="mt-4 text-sm font-bold">Simone Villar — Corretora responsável</p>
             <p className="text-sm opacity-85">CRECI 189.434-F 42581-J</p>
             <p className="mt-3 text-sm opacity-85">
-              📞{" "}
               <a href="tel:+5511999922344" className="hover:underline">
                 (11) 9.9992-2344
               </a>
             </p>
             <p className="text-sm opacity-85">
-              💬{" "}
               <a
                 href={linkZap}
                 target="_blank"

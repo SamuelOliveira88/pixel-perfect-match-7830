@@ -65,7 +65,7 @@ function Index() {
           </span>
           <h2 className="text-3xl leading-tight font-extrabold text-primary-foreground md:text-5xl">
             Com apenas <span className="text-primary">R$ 800</span> de entrada, você já pode conquistar o seu
-            primeiro apê pelo Minha Casa Minha Vida 🏡✨
+            primeiro apê pelo Minha Casa Minha Vida
           </h2>
           <a
             href={linkZap}
@@ -97,7 +97,7 @@ function Index() {
               financiamento de acordo com sua renda.
             </p>
             <div className="flex flex-wrap gap-3.5">
-              {["💰 Subsídio do governo", "🏦 Use seu FGTS na entrada", "📆 Parcela que cabe no seu bolso"].map((b) => (
+              {["Subsídio do governo", "Use seu FGTS na entrada", "Parcela que cabe no seu bolso"].map((b) => (
                 <span
                   key={b}
                   className="rounded-full border border-primary-foreground/35 bg-accent/35 px-4 py-2 text-sm font-semibold backdrop-blur-sm"
@@ -152,7 +152,7 @@ function Index() {
               {beneficios.map((b) => (
                 <li key={b} className="flex items-start gap-3.5 text-base">
                   <span className="flex size-7.5 shrink-0 items-center justify-center rounded-full bg-accent font-extrabold text-accent-foreground">
-                    ✓
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
                   </span>
                   {b}
                 </li>

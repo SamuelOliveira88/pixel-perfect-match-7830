@@ -120,7 +120,7 @@ function DetalheEmpreendimento() {
             <ul className="space-y-2">
               {sobre.map((i) => (
                 <li key={i} className="relative pl-6 text-muted-foreground">
-                  <span className="absolute left-0 font-extrabold text-accent">✓</span>
+                  <span className="absolute left-0 font-extrabold text-accent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
                   {i}
                 </li>
               ))}
@@ -148,7 +148,7 @@ function DetalheEmpreendimento() {
                       key={item}
                       className="flex items-center gap-2 rounded-[14px] bg-secondary px-4 py-3 text-sm font-semibold text-muted-foreground"
                     >
-                      <span className="font-extrabold text-accent">✓</span>
+                      <span className="font-extrabold text-accent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
                       {item}
                     </li>
                   ))}
@@ -207,7 +207,7 @@ function DetalheEmpreendimento() {
               <ul className="space-y-2">
                 {condicoes.map((i) => (
                   <li key={i} className="relative pl-6 text-muted-foreground">
-                    <span className="absolute left-0 font-extrabold text-accent">✓</span>
+                    <span className="absolute left-0 font-extrabold text-accent"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
                     {i}
                   </li>
                 ))}
