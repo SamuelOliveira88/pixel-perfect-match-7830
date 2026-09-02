@@ -65,7 +65,7 @@ function Index() {
           </span>
           <h2 className="text-3xl leading-tight font-extrabold text-primary-foreground md:text-5xl">
             O seu apartamento em São Paulo, com entrada a partir de{" "}
-            <span className="text-accent">R$ 800,00</span>
+            <span className="text-primary">R$ 800,00</span>
           </h2>
           <a
             href={linkZap}
@@ -78,9 +78,9 @@ function Index() {
           </a>
           <p className="mx-auto mt-7 max-w-xl text-lg text-primary-foreground/90">
             Achou que morar num condomínio estilo clube com piscina, academia e salão de festas{" "}
-            <strong className="text-accent">era um sonho impossível?</strong> A Villar Imóveis coloca essa{" "}
-            <strong className="text-accent">conquista</strong> ao seu alcance, com{" "}
-            <strong className="text-accent">parcelas que cabem no seu bolso</strong> e zero burocracia.
+            <strong className="text-primary">era um sonho impossível?</strong> A Villar Imóveis coloca essa{" "}
+            <strong className="text-primary">conquista</strong> ao seu alcance, com{" "}
+            <strong className="text-primary">parcelas que cabem no seu bolso</strong> e zero burocracia.
           </p>
         </div>
       </section>
