@@ -7,6 +7,7 @@ import { SiteFooter } from "@/components/mcmv/SiteFooter";
 import { zap } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 import lazer from "@/assets/emp-lazer.jpg";
+import fachada from "@/assets/emp-fachada.jpg";
 import mcmvFamilia from "@/assets/mcmv-familia.jpg";
 import simone from "@/assets/simone.jpg";
 
