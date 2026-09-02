@@ -68,7 +68,7 @@ export function FormSimulacao() {
         className="mx-auto w-full max-w-[460px] rounded-[20px] border border-[#33456f] bg-[#1d2b4a] p-7 text-center shadow-[0_15px_40px_rgba(0,0,0,.25)]"
       >
         <div className="mx-auto mb-4 flex size-12 items-center justify-center rounded-full bg-accent text-2xl font-bold text-accent-foreground">
-          ✓
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
         </div>
         <h2 className="mb-2 text-xl font-bold text-[#f2f2f0]">Recebemos seus dados!</h2>
         <p className="text-sm leading-relaxed text-[#d5dbee]">

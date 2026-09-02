@@ -48,7 +48,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
         <ul className="mb-5 flex-1 space-y-1">
           {emp.itens.map((i) => (
             <li key={i} className="relative pl-6 text-sm text-muted-foreground">
-              <span className="absolute left-0 font-extrabold text-accent">✓</span>
+              <span className="absolute left-0 font-extrabold text-accent"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg></span>
               {i}
             </li>
           ))}
@@ -58,7 +58,7 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
           to="/empreendimento/$slug"
           params={{ slug: slugify(emp.nome) }}
         >
-          📖 VER BOOK COMPLETO
+          VER BOOK COMPLETO
         </Link>
 
         <a
@@ -233,7 +233,7 @@ export function Empreendimentos() {
               onClick={() => setBook(null)}
               className="text-2xl leading-none"
             >
-              ✕
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
             </button>
           </div>
           <button
