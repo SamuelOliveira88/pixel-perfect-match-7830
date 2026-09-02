@@ -28,10 +28,10 @@ const bookBonfiglioliMods = import.meta.glob<{ default: { url: string } }>(
 const bookBonfiglioli = urlsFromGlob(bookBonfiglioliMods);
 
 const fotosBonfiglioli = [
+  bonf2.url,
   fachadaBonfiglioli.url,
   ...bookBonfiglioli,
   bonf1.url,
-  bonf2.url,
   bonf3.url,
   bonf4.url,
   bonf5.url,
