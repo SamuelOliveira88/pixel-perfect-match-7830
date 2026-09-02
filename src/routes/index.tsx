@@ -52,17 +52,35 @@ function Index() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <section id="destaque" className="bg-gradient-to-br from-primary to-primary-dark py-10">
-        <div className="mx-auto max-w-[1100px] px-5">
-          <div className="mb-6 text-center">
-            <span className="mb-3 inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-4 py-1.5 text-xs font-extrabold tracking-[0.2em] text-primary-foreground uppercase backdrop-blur-sm">
-              <span className="inline-block size-2 rounded-full bg-cyan-accent" />
-              Villar Imóveis
-            </span>
-            <h2 className="mt-3 text-2xl leading-snug font-extrabold text-primary-foreground md:text-4xl">
-              O seu apartamento em São Paulo, com entrada a partir de R$ 800,00
-            </h2>
-          </div>
+      <section
+        id="destaque"
+        className="relative flex min-h-[92vh] items-center justify-center bg-primary bg-cover bg-center py-16 text-center"
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)), url(${fachada})` }}
+      >
+        <div className="mx-auto max-w-[760px] px-5">
+          <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-5 py-2 text-xs font-extrabold tracking-[0.25em] text-primary-foreground uppercase backdrop-blur-sm">
+            <span className="inline-block size-2 rounded-full bg-cyan-accent" />
+            Villar Imóveis
+          </span>
+          <h2 className="text-3xl leading-tight font-extrabold text-primary-foreground md:text-5xl">
+            O seu apartamento em São Paulo, com entrada a partir de{" "}
+            <span className="text-accent">R$ 800,00</span>
+          </h2>
+          <a
+            href={linkZap}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClickWhatsApp(linkZap, "Hero - QUERO SIMULAR AGORA")}
+            className="btn-base mt-7 bg-whatsapp text-lg text-primary-foreground shadow-lg hover:brightness-110"
+          >
+            QUERO SIMULAR AGORA!
+          </a>
+          <p className="mx-auto mt-7 max-w-xl text-lg text-primary-foreground/90">
+            Achou que morar num condomínio estilo clube com piscina, academia e salão de festas{" "}
+            <strong className="text-accent">era um sonho impossível?</strong> A Villar Imóveis coloca essa{" "}
+            <strong className="text-accent">conquista</strong> ao seu alcance, com{" "}
+            <strong className="text-accent">parcelas que cabem no seu bolso</strong> e zero burocracia.
+          </p>
         </div>
       </section>
 
