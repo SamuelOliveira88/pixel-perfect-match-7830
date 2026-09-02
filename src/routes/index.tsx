@@ -64,8 +64,8 @@ function Index() {
             Villar Imóveis
           </span>
           <h2 className="text-3xl leading-tight font-extrabold text-primary-foreground md:text-5xl">
-            O seu apartamento em São Paulo, com entrada a partir de{" "}
-            <span className="text-primary">R$ 800,00</span>
+            Transforme <span className="text-primary">R$ 800,00</span> na chave do seu primeiro apê com{" "}
+            Minha Casa Minha Vida!
           </h2>
           <a
             href={linkZap}
@@ -79,7 +79,8 @@ function Index() {
           <p className="mx-auto mt-7 max-w-xl text-lg text-primary-foreground/90">
             Achou que morar num condomínio estilo clube com piscina, academia e salão de festas{" "}
             <strong className="text-primary">era um sonho impossível?</strong> A Villar Imóveis coloca essa{" "}
-            <strong className="text-primary">conquista</strong> ao seu alcance, com{" "}
+            <strong className="text-primary">conquista</strong> ao seu alcance, entrada de apenas{" "}
+            <strong className="text-primary">R$ 800,00</strong> com{" "}
             <strong className="text-primary">parcelas que cabem no seu bolso</strong> e zero burocracia.
           </p>
         </div>
