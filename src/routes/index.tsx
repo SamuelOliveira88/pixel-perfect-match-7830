@@ -56,7 +56,7 @@ function Index() {
       <section
         id="destaque"
         className="relative flex min-h-[92vh] items-center justify-center bg-primary bg-cover bg-center py-16 text-center"
-        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)), url(${bonf2.url})` }}
+        style={{ backgroundImage: `linear-gradient(rgba(0,0,0,.62),rgba(0,0,0,.62)), url(${heroPiscina.url})` }}
       >
         <div className="mx-auto max-w-[760px] px-5">
           <span className="mb-5 inline-flex items-center gap-2 rounded-full bg-primary-foreground/15 px-5 py-2 text-xs font-extrabold tracking-[0.25em] text-primary-foreground uppercase backdrop-blur-sm">
