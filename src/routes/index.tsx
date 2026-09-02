@@ -64,8 +64,8 @@ function Index() {
             Villar Imóveis
           </span>
           <h2 className="text-3xl leading-tight font-extrabold text-primary-foreground md:text-5xl">
-            Transforme <span className="text-primary">R$ 800,00</span> na chave do seu primeiro apê com{" "}
-            Minha Casa Minha Vida!
+            Com apenas <span className="text-primary">R$ 800</span> de entrada, você já pode conquistar o seu
+            primeiro apê pelo Minha Casa Minha Vida 🏡✨
           </h2>
           <a
             href={linkZap}
