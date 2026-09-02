@@ -7,7 +7,7 @@ import { SiteFooter } from "@/components/mcmv/SiteFooter";
 import { zap } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 import lazer from "@/assets/emp-lazer.jpg";
-import bonf2 from "@/assets/emp/bonfiglioli-2_1.jpg.asset.json";
+import heroPiscina from "@/assets/emp/hero-piscina-bonfiglioli.jpg.asset.json";
 import mcmvFamilia from "@/assets/mcmv-familia.jpg";
 import simone from "@/assets/simone.jpg";
 
