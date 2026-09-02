@@ -64,8 +64,8 @@ function Index() {
             Villar Imóveis
           </span>
           <h2 className="text-3xl leading-tight font-extrabold text-primary-foreground md:text-5xl">
-            O seu apartamento em São Paulo, com entrada a partir de{" "}
-            <span className="text-primary">R$ 800,00</span>
+            Transforme <span className="text-primary">R$ 800,00</span> na chave do seu primeiro apê com{" "}
+            Minha Casa Minha Vida!
           </h2>
           <a
             href={linkZap}
