@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { empreendimentos, nomeExibicao, slugify, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
+import { empreendimentos, nomeExibicao, slugCurto, zap, ZONAS, type Empreendimento, type Zona } from "@/data/empreendimentos";
 import { onClickWhatsApp } from "@/lib/leadWebhook";
 
 
@@ -55,8 +55,8 @@ function Card({ emp, abrir }: { emp: Empreendimento; abrir: (foto: number) => vo
         </ul>
         <Link
           className="btn-base mb-2.5 w-full border-2 border-primary bg-card text-primary hover:bg-primary hover:text-primary-foreground"
-          to="/empreendimento/$slug"
-          params={{ slug: slugify(emp.nome) }}
+          to="/$slug"
+          params={{ slug: slugCurto(emp.nome) }}
         >
           VER BOOK COMPLETO
         </Link>
