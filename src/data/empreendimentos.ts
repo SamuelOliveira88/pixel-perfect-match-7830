@@ -270,7 +270,21 @@ export const empreendimentos: Empreendimento[] = [
     bookUrl: "https://vibraresidencial.com.br/produtos/vibra-paes-de-barros/",
   },
   {
+    nome: "Vibra Vila Romana",
+    zona: "Zona Oeste",
+    itens: [
+      "Na Rua Clélia, Vila Romana, zona oeste de São Paulo",
+      "1 e 2 dormitórios, de 24m² a 45m²",
+      "Piscina de 20m, academia, espaço gourmet e pet care",
+      "10 minutos a pé do Terminal e Estação Lapa da CPTM",
+      "Financiamento Caixa em até 420x, com uso do FGTS",
+    ],
+    fotos: [vromana1, vromana2, vromana3],
+    bookUrl: "https://vibraresidencial.com.br/produtos/vibra-vila-romana/",
+  },
+  {
     nome: "Vibra Belenzinho",
+
     zona: "Zona Leste",
     itens: [
       "No Belenzinho, zona leste de São Paulo",
