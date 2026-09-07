@@ -54,21 +54,35 @@ export function DetalheEmpreendimento({ emp }: { emp: Empreendimento }) {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main>
-        <section className="relative">
+        <section className="relative flex min-h-[60vh] items-center">
           {fachada && (
             <img
               src={fachada}
               alt={`Fachada do ${exibicao}`}
-              className="h-[46vh] min-h-[280px] w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-black/10" />
-          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1100px] px-5 pb-8">
-            <span className="mb-3 inline-flex rounded-full bg-accent px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent-foreground">
-              {emp.zona}
+          <div className="absolute inset-0 bg-black/65" />
+          <div className="relative mx-auto w-full max-w-[1100px] px-5 py-24">
+            <span className="mb-4 inline-flex rounded-full bg-accent px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent-foreground">
+              {emp.zona} · São Paulo
             </span>
-            <h1 className="text-3xl font-extrabold text-white md:text-4xl">{exibicao}</h1>
-            <p className="mt-1 font-bold text-white/85">Minha Casa Minha Vida · HIS</p>
+            <h1 className="max-w-2xl text-3xl font-extrabold uppercase leading-tight text-white md:text-5xl">
+              {exibicao}
+            </h1>
+            <p className="mt-3 max-w-xl font-semibold text-white/85">
+              {emp.tipologiasMetragens ?? "Apartamentos Minha Casa Minha Vida"}
+            </p>
+            <p className="mt-1 text-sm font-bold text-white/70">Minha Casa Minha Vida · HIS</p>
+            <a
+              className="btn-base mt-7 inline-flex bg-whatsapp px-8 text-white hover:opacity-90"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={zap(mensagem)}
+              onClick={onClickWhatsApp(zap(mensagem), `HERO DETALHE - ${exibicao}`)}
+            >
+              Falar no WhatsApp
+            </a>
           </div>
         </section>
 
