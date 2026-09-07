@@ -116,10 +116,15 @@ export function DetalheEmpreendimento({ emp }: { emp: Empreendimento }) {
 
           {fichaItens.length > 0 && (
             <section>
-              <h2 className="mb-4 text-2xl font-extrabold text-primary">Ficha técnica</h2>
-              <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {fichaItens.map(([rotulo, valor]) => (
-                  <FichaLinha key={rotulo} rotulo={rotulo} valor={valor} />
+              <h2 className="mb-4 text-2xl font-extrabold text-primary">
+                Informações do empreendimento
+              </h2>
+              {emp.endereco && (
+                <p className="mb-4 text-sm font-semibold text-muted-foreground">{emp.endereco}</p>
+              )}
+              <dl className="divide-y divide-border overflow-hidden rounded-[14px] border border-border">
+                {fichaItens.map(([rotulo, valor], i) => (
+                  <FichaLinha key={rotulo} rotulo={rotulo} valor={valor} zebra={i % 2 === 0} />
                 ))}
               </dl>
             </section>
