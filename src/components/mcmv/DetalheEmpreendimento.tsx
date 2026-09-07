@@ -185,6 +185,31 @@ export function DetalheEmpreendimento({ emp }: { emp: Empreendimento }) {
           )}
 
 
+          {emp.fotos.length > 1 && (
+            <section>
+              <h2 className="mb-4 text-2xl font-extrabold text-primary">Galeria</h2>
+              <p className="mb-6 text-sm text-muted-foreground">
+                Imagens preliminares do projeto, sujeitas a alteração.
+              </p>
+              <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {emp.fotos.map((f, i) => (
+                  <figure key={f + i} className="overflow-hidden rounded-[18px] bg-card shadow-[0_10px_30px_rgba(0,0,0,.08)]">
+                    <img
+                      src={f}
+                      alt={`${exibicao} - foto ${i + 1}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-56 w-full object-cover"
+                    />
+                    <figcaption className="px-5 py-3 text-sm font-semibold text-muted-foreground">
+                      {i === 0 ? "Fachada" : `${exibicao} — foto ${i + 1}`}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+            </section>
+          )}
+
           <section className="grid gap-10 md:grid-cols-2 md:items-center">
             <div>
               <h2 className="mb-3 text-2xl font-extrabold text-primary">Faça sua simulação grátis</h2>
