@@ -1,16 +1,16 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
-import { getEmpreendimentoPorSlug, nomeExibicao } from "@/data/empreendimentos";
+import { getEmpreendimentoPorSlugCurto, nomeExibicao } from "@/data/empreendimentos";
 import { DetalheEmpreendimento, NaoEncontrado } from "@/components/mcmv/DetalheEmpreendimento";
 
-export const Route = createFileRoute("/empreendimento/$slug")({
+export const Route = createFileRoute("/$slug")({
   loader: ({ params }) => {
-    const emp = getEmpreendimentoPorSlug(params.slug);
+    const emp = getEmpreendimentoPorSlugCurto(params.slug);
     if (!emp) throw notFound();
     return { nome: nomeExibicao(emp.nome), zona: emp.zona, resumo: emp.itens[0] ?? "" };
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Empreendimento não encontrado | Villar Imóveis" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Página não encontrada | Villar Imóveis" }, { name: "robots", content: "noindex" }] };
     }
     const titulo = `${loaderData.nome} | Villar Imóveis`;
     const descricao = `${loaderData.nome} — ${loaderData.zona} de São Paulo. ${loaderData.resumo} Minha Casa Minha Vida com subsídio e financiamento Caixa.`;
@@ -26,12 +26,12 @@ export const Route = createFileRoute("/empreendimento/$slug")({
     };
   },
   notFoundComponent: NaoEncontrado,
-  component: PaginaDetalheLegada,
+  component: PaginaEmpreendimento,
 });
 
-function PaginaDetalheLegada() {
+function PaginaEmpreendimento() {
   const { slug } = Route.useParams();
-  const emp = getEmpreendimentoPorSlug(slug);
+  const emp = getEmpreendimentoPorSlugCurto(slug);
   if (!emp) return <NaoEncontrado />;
   return <DetalheEmpreendimento emp={emp} />;
 }

@@ -664,3 +664,13 @@ export function getEmpreendimentoPorSlug(slug: string) {
 export function nomeExibicao(nome: string) {
   return nome.replace(/^Vibra\s+/i, "");
 }
+
+/** Slug curto para URL limpa, sem prefixo da incorporadora e sem hífens (ex.: "jardimbonfiglioli"). */
+export function slugCurto(nome: string) {
+  return slugify(nomeExibicao(nome)).replace(/-/g, "");
+}
+
+export function getEmpreendimentoPorSlugCurto(slug: string) {
+  const limpo = slug.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return empreendimentos.find((e) => slugCurto(e.nome) === limpo);
+}
