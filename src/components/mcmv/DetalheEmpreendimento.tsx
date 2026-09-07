@@ -130,6 +130,22 @@ export function DetalheEmpreendimento({ emp }: { emp: Empreendimento }) {
             </section>
           )}
 
+          {emp.lazerCompleto?.length ? (
+            <section>
+              <h2 className="mb-4 text-2xl font-extrabold text-primary">Diferenciais</h2>
+              <ul className="space-y-2">
+                {emp.lazerCompleto.slice(0, 6).map((item) => (
+                  <li key={item} className="relative pl-6 text-muted-foreground">
+                    <span className="absolute left-0 font-extrabold text-accent">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
+
           {(emp.lazerCompleto?.length || lazer.length > 0) && (
             <section>
               <h2 className="mb-4 text-2xl font-extrabold text-primary">Lazer</h2>
