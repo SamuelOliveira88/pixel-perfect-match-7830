@@ -19,11 +19,15 @@ export function NaoEncontrado() {
 
 const legendasLazer = ["Piscina", "Área de lazer"];
 
-function FichaLinha({ rotulo, valor }: { rotulo: string; valor: string }) {
+function FichaLinha({ rotulo, valor, zebra }: { rotulo: string; valor: string; zebra: boolean }) {
   return (
-    <div className="rounded-[14px] bg-card p-4 shadow-[0_6px_20px_rgba(0,0,0,.06)]">
-      <dt className="text-xs font-extrabold uppercase tracking-[0.1em] text-accent">{rotulo}</dt>
-      <dd className="mt-1 text-sm font-semibold text-muted-foreground">{valor}</dd>
+    <div
+      className={`grid gap-1 px-5 py-3.5 sm:grid-cols-[220px_1fr] sm:items-center sm:gap-6 ${
+        zebra ? "bg-muted" : "bg-card"
+      }`}
+    >
+      <dt className="text-sm font-extrabold text-foreground">{rotulo}</dt>
+      <dd className="text-sm font-semibold text-muted-foreground">{valor}</dd>
     </div>
   );
 }
