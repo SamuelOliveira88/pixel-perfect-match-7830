@@ -19,11 +19,15 @@ export function NaoEncontrado() {
 
 const legendasLazer = ["Piscina", "Área de lazer"];
 
-function FichaLinha({ rotulo, valor }: { rotulo: string; valor: string }) {
+function FichaLinha({ rotulo, valor, zebra }: { rotulo: string; valor: string; zebra: boolean }) {
   return (
-    <div className="rounded-[14px] bg-card p-4 shadow-[0_6px_20px_rgba(0,0,0,.06)]">
-      <dt className="text-xs font-extrabold uppercase tracking-[0.1em] text-accent">{rotulo}</dt>
-      <dd className="mt-1 text-sm font-semibold text-muted-foreground">{valor}</dd>
+    <div
+      className={`grid gap-1 px-5 py-3.5 sm:grid-cols-[220px_1fr] sm:items-center sm:gap-6 ${
+        zebra ? "bg-muted" : "bg-card"
+      }`}
+    >
+      <dt className="text-sm font-extrabold text-foreground">{rotulo}</dt>
+      <dd className="text-sm font-semibold text-muted-foreground">{valor}</dd>
     </div>
   );
 }
@@ -54,21 +58,35 @@ export function DetalheEmpreendimento({ emp }: { emp: Empreendimento }) {
     <div className="min-h-screen bg-background">
       <SiteHeader />
       <main>
-        <section className="relative">
+        <section className="relative flex min-h-[60vh] items-center">
           {fachada && (
             <img
               src={fachada}
               alt={`Fachada do ${exibicao}`}
-              className="h-[46vh] min-h-[280px] w-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-black/10" />
-          <div className="absolute inset-x-0 bottom-0 mx-auto max-w-[1100px] px-5 pb-8">
-            <span className="mb-3 inline-flex rounded-full bg-accent px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent-foreground">
-              {emp.zona}
+          <div className="absolute inset-0 bg-black/65" />
+          <div className="relative mx-auto w-full max-w-[1100px] px-5 py-24">
+            <span className="mb-4 inline-flex rounded-full bg-accent px-3.5 py-1.5 text-xs font-extrabold uppercase tracking-[0.12em] text-accent-foreground">
+              {emp.zona} · São Paulo
             </span>
-            <h1 className="text-3xl font-extrabold text-white md:text-4xl">{exibicao}</h1>
-            <p className="mt-1 font-bold text-white/85">Minha Casa Minha Vida · HIS</p>
+            <h1 className="max-w-2xl text-3xl font-extrabold uppercase leading-tight text-white md:text-5xl">
+              {exibicao}
+            </h1>
+            <p className="mt-3 max-w-xl font-semibold text-white/85">
+              {emp.tipologiasMetragens ?? "Apartamentos Minha Casa Minha Vida"}
+            </p>
+            <p className="mt-1 text-sm font-bold text-white/70">Minha Casa Minha Vida · HIS</p>
+            <a
+              className="btn-base mt-7 inline-flex bg-whatsapp px-8 text-white hover:opacity-90"
+              target="_blank"
+              rel="noopener noreferrer"
+              href={zap(mensagem)}
+              onClick={onClickWhatsApp(zap(mensagem), `HERO DETALHE - ${exibicao}`)}
+            >
+              Falar no WhatsApp
+            </a>
           </div>
         </section>
 
@@ -98,14 +116,35 @@ export function DetalheEmpreendimento({ emp }: { emp: Empreendimento }) {
 
           {fichaItens.length > 0 && (
             <section>
-              <h2 className="mb-4 text-2xl font-extrabold text-primary">Ficha técnica</h2>
-              <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {fichaItens.map(([rotulo, valor]) => (
-                  <FichaLinha key={rotulo} rotulo={rotulo} valor={valor} />
+              <h2 className="mb-4 text-2xl font-extrabold text-primary">
+                Informações do empreendimento
+              </h2>
+              {emp.endereco && (
+                <p className="mb-4 text-sm font-semibold text-muted-foreground">{emp.endereco}</p>
+              )}
+              <dl className="divide-y divide-border overflow-hidden rounded-[14px] border border-border">
+                {fichaItens.map(([rotulo, valor], i) => (
+                  <FichaLinha key={rotulo} rotulo={rotulo} valor={valor} zebra={i % 2 === 0} />
                 ))}
               </dl>
             </section>
           )}
+
+          {emp.lazerCompleto?.length ? (
+            <section>
+              <h2 className="mb-4 text-2xl font-extrabold text-primary">Diferenciais</h2>
+              <ul className="space-y-2">
+                {emp.lazerCompleto.slice(0, 6).map((item) => (
+                  <li key={item} className="relative pl-6 text-muted-foreground">
+                    <span className="absolute left-0 font-extrabold text-accent">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
 
           {(emp.lazerCompleto?.length || lazer.length > 0) && (
             <section>
