@@ -30,6 +30,41 @@ const bookBonfiglioliMods = import.meta.glob<{ default: { url: string } }>(
 );
 const bookBonfiglioli = urlsFromGlob(bookBonfiglioliMods);
 
+const bookVilaRomanaMods = import.meta.glob<{ default: { url: string } }>(
+  "../assets/bookvr/*.asset.json",
+  { eager: true },
+);
+const bookVr = Object.fromEntries(
+  Object.entries(bookVilaRomanaMods).map(([k, v]) => [
+    k.replace(/^.*\/(p-\d+)\.jpg\.asset\.json$/, "$1"),
+    v.default.url,
+  ]),
+);
+const fotosVilaRomana = [
+  bookVr["p-08"],
+  bookVr["p-10"],
+  bookVr["p-11"],
+  vromana1,
+  vromana2,
+  vromana3,
+  bookVr["p-06"],
+  bookVr["p-09"],
+  bookVr["p-12"],
+  bookVr["p-13"],
+  bookVr["p-15"],
+  bookVr["p-16"],
+  bookVr["p-17"],
+  bookVr["p-19"],
+  bookVr["p-20"],
+  bookVr["p-21"],
+  bookVr["p-22"],
+  bookVr["p-23"],
+  bookVr["p-24"],
+  bookVr["p-27"],
+  bookVr["p-30"],
+  bookVr["p-25"],
+].filter((u): u is string => Boolean(u));
+
 const fotosBonfiglioli = [
   bonf2.url,
   fachadaBonfiglioli.url,
@@ -279,7 +314,7 @@ export const empreendimentos: Empreendimento[] = [
       "10 minutos a pé do Terminal e Estação Lapa da CPTM",
       "Financiamento Caixa em até 420x, com uso do FGTS",
     ],
-    fotos: [vromana1, vromana2, vromana3],
+    fotos: fotosVilaRomana,
     bookUrl: "https://vibraresidencial.com.br/produtos/vibra-vila-romana/",
   },
   {
