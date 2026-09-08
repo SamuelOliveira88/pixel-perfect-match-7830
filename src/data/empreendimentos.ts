@@ -9,9 +9,6 @@ import gio2 from "@/assets/emp/giovanni-2_1.jpg.asset.json";
 import gio3 from "@/assets/emp/giovanni-3_1.jpg.asset.json";
 import gio4 from "@/assets/emp/giovanni-4_1.jpg.asset.json";
 import gio5 from "@/assets/emp/giovanni-5_1.jpg.asset.json";
-import vromana1 from "@/assets/emp/vilaromana-1.jpg";
-import vromana2 from "@/assets/emp/vilaromana-2.jpg";
-import vromana3 from "@/assets/emp/vilaromana-3.jpg";
 
 export const WHATSAPP = "5511999922344";
 
@@ -44,10 +41,8 @@ const fotosVilaRomana = [
   bookVr["p-08"],
   bookVr["p-10"],
   bookVr["p-11"],
-  vromana1,
-  vromana2,
-  vromana3,
   bookVr["p-06"],
+
   bookVr["p-09"],
   bookVr["p-12"],
   bookVr["p-13"],
