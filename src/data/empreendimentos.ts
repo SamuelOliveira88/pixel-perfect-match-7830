@@ -314,7 +314,7 @@ export const empreendimentos: Empreendimento[] = [
       "10 minutos a pé do Terminal e Estação Lapa da CPTM",
       "Financiamento Caixa em até 420x, com uso do FGTS",
     ],
-    fotos: [vromana1, vromana2, vromana3],
+    fotos: fotosVilaRomana,
     bookUrl: "https://vibraresidencial.com.br/produtos/vibra-vila-romana/",
   },
   {
